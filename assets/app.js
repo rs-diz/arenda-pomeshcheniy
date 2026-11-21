@@ -10,11 +10,6 @@
   };
   var AUTH = 'pm-auth';
 
-  /* --- кто вошёл: в шапке вместо «Войти» пишем «Кабинет» --- */
-  if (store.get(AUTH) === '1') {
-    $$('.link-login').forEach(function (a) { a.textContent = 'Кабинет'; a.setAttribute('href', 'sdat.html#kabinet'); });
-  }
-
   /* --- меню на телефоне --- */
   var burger = $('.burger'), menu = $('#menu');
   if (burger && menu) {
@@ -376,7 +371,6 @@
       form2.hidden = true; done.hidden = false;
       if (stepTxt) stepTxt.textContent = 'Номер подтверждён';
       store.set(AUTH, '1');
-      $$('.link-login').forEach(function (a) { a.textContent = 'Кабинет'; a.setAttribute('href', 'sdat.html#kabinet'); });
     }
     inputs.forEach(function (inp, i) {
       inp.addEventListener('input', function () {

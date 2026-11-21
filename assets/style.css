@@ -440,8 +440,6 @@ body.has-cookie{padding-bottom:48px}
 .is-bw .logo__mark i:nth-child(2){background:#6F7276}
 .is-bw .logo__mark i:nth-child(3){background:#A4A6A9}
 .is-bw .logo__mark i:nth-child(4){background:#D2D3D5}
-.is-bw .nav__a .sq{background:#9A9DA1}
-.is-bw .nav__a:hover,.is-bw .nav__a.is-active{border-bottom-color:var(--tush)}
 .is-bw .role--dark .steps li::before{color:#fff}
 
 /* ---------- карточка объявления ---------- */
@@ -488,3 +486,9 @@ body.has-cookie{padding-bottom:48px}
 .status--off{background:#E9E9E6;color:#4C4F52}
 
 [id]{scroll-margin-top:88px}
+
+/* главная короче */
+.is-bw .site-footer{margin-top:48px}
+.is-bw .role{padding:34px 40px 38px;gap:18px}
+.is-bw .steps li{padding:15px 0}
+.is-bw .steps b{font-size:19px}
