@@ -88,8 +88,7 @@ a.skip:focus{left:12px}
 .logo__mark i:nth-child(3){background:var(--office)}
 .logo__mark i:nth-child(4){background:var(--garage)}
 .logo__txt{font:800 30px/1 var(--f-head);letter-spacing:.005em}
-.menu{display:flex;flex:1;align-items:center;justify-content:space-between;gap:24px}
-.nav{display:flex;gap:26px}
+.nav{display:flex;gap:26px;flex:1;min-width:0}
 .nav__a{display:inline-flex;align-items:center;gap:9px;padding:8px 0;font-weight:500;font-size:15px;text-decoration:none;border-bottom:3px solid transparent}
 .nav__a .sq{width:10px;height:10px;background:var(--c);display:block;flex:none}
 .nav__a:hover{border-bottom-color:var(--c)}
@@ -97,18 +96,21 @@ a.skip:focus{left:12px}
 .act{display:flex;align-items:center;gap:12px}
 .link-login{font-weight:500;font-size:15px;text-decoration:none;padding:8px 6px;border-bottom:2px solid transparent}
 .link-login:hover{border-bottom-color:var(--tush)}
-.burger{display:none;width:46px;height:46px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;margin-left:auto;position:relative}
-.burger i,.burger i::before,.burger i::after{position:absolute;left:12px;right:12px;height:2px;background:var(--tush);content:"";display:block}
-.burger i{top:22px}.burger i::before{top:-7px;left:0;right:0}.burger i::after{top:7px;left:0;right:0}
 @media (max-width:1080px){
-  .site-header__in{gap:16px}
-  .burger{display:block}
-  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:20px;background:var(--list);padding:20px 24px 28px;border-bottom:1px solid var(--line)}
-  .menu.is-open{display:flex}
-  .nav{flex-direction:column;gap:4px}
-  .nav__a{padding:12px 0;font-size:17px}
-  .act{flex-wrap:wrap}
-  .act .btn{flex:1 1 140px}
+  .site-header__in{flex-wrap:wrap;gap:0 16px;padding-top:10px}
+  .act{order:2;margin-left:auto}
+  .nav{order:3;flex:0 0 100%;overflow-x:auto;gap:24px;margin-top:6px;border-top:1px solid var(--line);scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav__a{white-space:nowrap;padding:11px 0 9px}
+}
+@media (max-width:480px){
+  .logo{gap:9px}
+  .logo__txt{font-size:24px}
+  .logo__mark{grid-template-columns:repeat(2,11px)}
+  .logo__mark i{width:11px;height:11px}
+  .act{gap:8px}
+  .act .btn--sm{min-height:38px;padding:0 13px;font-size:14px}
+  .link-login{font-size:14px;padding:8px 2px}
 }
 
 /* ---------- хлебные крошки ---------- */
@@ -122,7 +124,7 @@ a.skip:focus{left:12px}
 .cover__head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4.2fr);gap:56px;align-items:end;padding:52px 0 40px}
 .cover__side{display:grid;gap:26px;padding-bottom:6px}
 .cover__side p{font-size:clamp(17px,1.5vw,20px);line-height:1.5;max-width:44ch}
-.cover__cols{display:flex;gap:4px;height:clamp(400px,calc(100vh - 360px),640px)}
+.cover__cols{display:flex;gap:4px;height:clamp(420px,calc(100vh - 150px),760px)}
 .col{position:relative;flex:1 1 0;min-width:0;overflow:hidden;display:block;text-decoration:none;color:var(--on);background:var(--c);transition:flex-grow .5s cubic-bezier(.2,.7,.2,1)}
 .col:hover,.col:focus-visible{flex-grow:1.45}
 .col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -132,7 +134,7 @@ a.skip:focus{left:12px}
 @media (max-width:900px){
   .cover__head{grid-template-columns:1fr;gap:28px;padding:40px 0 32px}
   .cover__cols{display:grid;grid-template-columns:1fr 1fr;height:auto}
-  .col{aspect-ratio:4/5}
+  .col{aspect-ratio:4/3}
   .col__plate{left:8px;right:8px;bottom:8px;padding:12px 12px 13px}
 }
 
@@ -492,3 +494,51 @@ body.has-cookie{padding-bottom:48px}
 .is-bw .role{padding:34px 40px 38px;gap:18px}
 .is-bw .steps li{padding:15px 0}
 .is-bw .steps b{font-size:19px}
+
+@media (min-width:901px) and (max-width:1080px){.cover__cols{height:clamp(420px,calc(100vh - 190px),760px)}}
+
+/* ---------- страница типа: сдать или снять ---------- */
+.hub{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center;padding:36px 0 40px}
+.hub__txt{display:grid;gap:22px}
+.hub__opts{display:grid;gap:12px;margin-top:6px}
+.choice{display:grid;gap:10px;padding:28px 30px 30px;text-decoration:none;justify-items:start;transition:filter .2s}
+.choice:hover{filter:brightness(1.07)}
+.choice--dark{background:var(--tush);color:#fff}
+.choice--accent{background:var(--accent);color:var(--on-accent)}
+.choice__t{font:800 clamp(30px,3vw,40px)/1 var(--f-head)}
+.choice__d{max-width:46ch;opacity:.92}
+.choice .btn{margin-top:6px}
+.choice--accent .btn{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent)}
+.hub__other{padding:0 0 56px;align-items:center}
+@media (max-width:900px){.hub{grid-template-columns:1fr;gap:28px}.hub .hero__img{order:-1}}
+.typechips a{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid #B5B7BA;background:#fff;border-radius:3px;font-weight:500;font-size:15px;text-decoration:none}
+.typechips a i{width:10px;height:10px;display:block;background:var(--c,var(--tush))}
+.typechips a:hover{border-color:var(--tush)}
+.typechips span{display:inline-flex;align-items:center;color:var(--muted);font-size:15px;margin-right:4px}
+
+/* окна выбора типа */
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick a{display:flex;align-items:center;gap:12px;padding:22px 20px;border:2px solid var(--tush);text-decoration:none;transition:background-color .2s}
+.pick a i{width:14px;height:14px;background:var(--c);display:block;flex:none}
+.pick a b{font:800 24px/1.05 var(--f-head)}
+.pick a:hover{background:var(--soft)}
+@media (max-width:560px){.pick{grid-template-columns:1fr}}
+button.opt{font:inherit;text-align:left;cursor:pointer;background:none;color:var(--tush)}
+button.opt.opt--fill{background:var(--tush);color:#fff}
+button.opt.opt--fill:hover{background:#161718}
+button.opt:not(.opt--fill):hover{background:var(--soft)}
+.req .msg{grid-column:1/-1}
+
+@media (max-width:560px){.col{aspect-ratio:4/5}}
+
+@media (max-width:560px){
+  .nav{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;overflow:visible}
+  .nav__a{white-space:normal;font-size:14px;line-height:1.2;padding:9px 0 7px}
+}
+
+/* страница типа: фото тянется на всю высоту левой колонки, низ по низу жёлтого блока */
+@media (min-width:901px){
+  .hub{align-items:stretch}
+  .hub .hero__img{display:flex}
+  .hub .hero__img img{flex:1;min-width:0;height:auto;aspect-ratio:auto;object-fit:cover}
+}

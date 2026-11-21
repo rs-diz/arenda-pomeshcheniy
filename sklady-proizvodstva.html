@@ -4,220 +4,43 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Аренда складов и&nbsp;производственных помещений | Помещения</title>
-<meta name="description" content="Склады, цеха и производственные площадки от собственников и посредников. Выбирайте по параметрам, которые важны для вашего дела, а не по цифре в объявлении.">
+<title>Склады и&nbsp;производства: сдать или&nbsp;снять | Помещения</title>
+<meta name="description" content="Склады и производства. Выберите, что вам нужно: снять помещение в каталоге или бесплатно разместить объявление.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' fill='%23F2B91F'/%3E%3Crect x='17' y='3' width='12' height='12' fill='%23C4492B'/%3E%3Crect x='3' y='17' width='12' height='12' fill='%233D7B5B'/%3E%3Crect x='17' y='17' width='12' height='12' fill='%232B7BA3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Sofia+Sans+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="t-sklad" id="top">
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<!-- WP: header.php + меню «Главное» -->
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
 <header class="site-header">
   <div class="wrap site-header__in">
     <a class="logo" href="index.html" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
-    <div class="menu" id="menu">
-      <nav class="nav" aria-label="Типы помещений"><a class="nav__a is-active" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
-      <div class="act">
-        <a class="link-login" href="sdat.html#vhod">Войти</a>
-        <a class="btn btn--ghost btn--sm" href="sdat.html">Сдать</a>
-        <a class="btn btn--sm" href="snyat.html">Снять</a>
-      </div>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a is-active" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html" data-open="pick-snyat">Снять</a>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i><span class="sr">Меню</span></button>
   </div>
 </header>
 <main id="main">
 <div class="wrap">
   <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><span aria-current="page">Склады и&nbsp;производства</span></li></ol></nav>
-  <!-- WP: шаблон архива категории (taxonomy-listing_category), блок «Первый экран» -->
-  <section class="hero">
-    <div class="hero__txt">
-      <h1 class="h1 h1--page">Аренда складов и&nbsp;производственных помещений</h1>
-      <p class="lead">Склады, цеха и&nbsp;производственные площадки от&nbsp;собственников и&nbsp;посредников. Выбирайте по&nbsp;параметрам, которые важны для&nbsp;вашего дела, а&nbsp;не&nbsp;по&nbsp;цифре в&nbsp;объявлении.</p>
-      <div class="btns">
-        <a class="btn btn--accent" href="#offers">Смотреть предложения</a>
-        <a class="btn btn--ghost" href="sdat.html">Сдать помещение</a>
+  <!-- WP: страница-выбор для категории: две кнопки ведут на архив категории и на «Добавить объявление» -->
+  <section class="hub">
+    <div class="hub__txt">
+      <h1 class="h1 h1--page">Хотите сдать склад или&nbsp;снять?</h1>
+      <p class="lead">Склады и&nbsp;производства. Поиск и&nbsp;размещение объявлений бесплатны.</p>
+      <div class="hub__opts">
+        <a class="choice choice--dark on-dark" href="snyat-sklad.html"><span class="choice__t">Снять склад</span><span class="choice__d">Каталог складов и&nbsp;цехов с&nbsp;фильтрами. Выберите по&nbsp;параметрам и&nbsp;свяжитесь с&nbsp;владельцем напрямую.</span><span class="btn btn--light">Смотреть предложения</span></a>
+        <a class="choice choice--accent" href="sdat-sklad.html"><span class="choice__t">Сдать склад</span><span class="choice__d">Бесплатное объявление: подтвердите номер, заполните параметры склада и&nbsp;добавьте фото.</span><span class="btn">Разместить объявление</span></a>
       </div>
-      <p class="hero__note">Поиск и&nbsp;размещение бесплатны.</p>
     </div>
     <div class="hero__img"><img src="assets/img/hero-sklad.jpg" alt="Современный складской комплекс с большими воротами" width="1600" height="1067"></div>
   </section>
+  <nav class="typechips hub__other" aria-label="Другой тип помещения"><span>Другой тип&nbsp;помещения:</span><a href="torgovye-pomeshcheniya.html" style="--c:var(--torg)"><i></i>Торговые помещения</a><a href="ofisy.html" style="--c:var(--office)"><i></i>Офисы</a><a href="garazhi-konteynery.html" style="--c:var(--garage)"><i></i>Гаражи и&nbsp;контейнеры</a></nav>
 </div>
-
-<!-- WP: блок «Плашки параметров» (группа блоков или повторитель ACF) -->
-<section class="sec" id="params" style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec__head">
-      <h2 class="h2">Что&nbsp;проверить до&nbsp;выезда на&nbsp;показ</h2>
-      <p class="lead">Площадь в&nbsp;объявлении ещё&nbsp;не&nbsp;значит, что&nbsp;помещение подойдёт. Сверьте параметры заранее и&nbsp;выезжайте только на&nbsp;подходящие.</p>
-    </div>
-    <ul class="params">
-<li class="param"><span class="param__u">м</span><h3>Высота до&nbsp;низа ферм</h3><p>Считается до&nbsp;нижней точки ферм и&nbsp;коммуникаций. От&nbsp;неё&nbsp;зависит, сколько ярусов стеллажей поместится в&nbsp;помещении.</p></li>
-<li class="param"><span class="param__u">т/м²</span><h3>Нагрузка на&nbsp;пол</h3><p>Стеллажи, погрузчики и&nbsp;оборудование давят на&nbsp;пол&nbsp;по-разному. Уточните допустимую нагрузку и&nbsp;состояние покрытия: пыль, ровность, трещины.</p></li>
-<li class="param"><span class="param__u">шт · тип</span><h3>Ворота</h3><p>Доковые или&nbsp;на&nbsp;нулевой отметке. Хватит ли&nbsp;их, чтобы без&nbsp;очереди разгружать машины в&nbsp;часы пик.</p></li>
-<li class="param"><span class="param__u">кВт</span><h3>Электрическая мощность</h3><p>Для&nbsp;производства она&nbsp;часто важнее ставки. Дополнительные киловатты стоят дорого и&nbsp;подключаются месяцами.</p></li>
-<li class="param"><span class="param__u">°C</span><h3>Температурный режим</h3><p>Отапливаемый склад, холодный или&nbsp;с&nbsp;несколькими зонами. Спросите, сколько стоит держать нужную температуру зимой.</p></li>
-<li class="param"><span class="param__u">м × м</span><h3>Сетка колонн</h3><p>От&nbsp;шага колонн зависит, сколько паллетомест реально поместится на&nbsp;той&nbsp;же&nbsp;площади.</p></li>
-<li class="param"><span class="param__u">фура 40&nbsp;фт</span><h3>Подъезд и&nbsp;площадка</h3><p>Разворот еврофуры, место для&nbsp;стоянки у&nbsp;погрузки, въезд без&nbsp;ограничений по&nbsp;времени суток.</p></li>
-<li class="param"><span class="param__u">документы</span><h3>Собственник и&nbsp;назначение</h3><p>Кто&nbsp;сдаёт, разрешено ли&nbsp;использовать помещение под&nbsp;ваш&nbsp;вид&nbsp;деятельности и&nbsp;нет&nbsp;ли&nbsp;ограничений на&nbsp;объект.</p></li>
-<li class="param param--fish"><span class="param__u">охрана</span><h3>Охрана и&nbsp;доступ</h3><p>Рыбный текст: здесь будет описание пункта. Текст-заполнитель показывает, как&nbsp;плашка выглядит на&nbsp;странице.</p></li>
-<li class="param param--fish"><span class="param__u">связь</span><h3>Интернет и&nbsp;связь</h3><p>Это&nbsp;текст-«рыба». Его&nbsp;заменят настоящим описанием, когда заказчик утвердит список пунктов.</p></li>
-<li class="param param--fish"><span class="param__u">км</span><h3>Расположение и&nbsp;транспорт</h3><p>Рыбный текст для&nbsp;проверки вёрстки. Он&nbsp;занимает столько же&nbsp;места, сколько займёт итоговое описание.</p></li>
-<li class="param param--fish"><span class="param__u">чел.</span><h3>Бытовые помещения</h3><p>Здесь появится короткое пояснение к&nbsp;пункту. Пока стоит рыбный текст, чтобы оценить длину строк и&nbsp;отступы.</p></li>
-<li class="param param--fish"><span class="param__u">срок</span><h3>Срок аренды и&nbsp;условия</h3><p>Заполнитель вместо описания. Две-три строки, чтобы проверить, как&nbsp;плашка смотрится рядом с&nbsp;остальными.</p></li>
-      <li class="param param--cta"><h3>Найдите помещение, где&nbsp;совпали все&nbsp;параметры</h3><a class="btn" href="#offers">Смотреть предложения</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- WP: архив объявлений с фильтрами (HivePress: форма поиска + сетка объявлений) -->
-<section class="sec sec--tight" id="offers" data-catalog>
-  <div class="wrap">
-    <div class="sec__head"><h2 class="h2">Предложения: склады и&nbsp;производства</h2></div>
-    <form class="filters" action="#" data-filter-form aria-label="Фильтры">
-  <div class="filters__row">
-    <label class="field"><span>Город</span><select class="select" name="city"><option value="">Любой</option><option value="Краснодар">Краснодар</option><option value="Москва">Москва и&nbsp;область</option><option value="Екатеринбург">Екатеринбург</option><option value="Казань">Казань</option><option value="Новосибирск">Новосибирск</option><option value="Ростов-на-Дону">Ростов-на-Дону</option></select></label>
-    <div class="field"><span>Площадь, м²</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Площадь, м², от" name="area-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Площадь, м², до" name="area-max"></div></div>
-    <div class="field"><span>Цена, ₽ в&nbsp;месяц</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Цена, ₽ в месяц, от" name="price-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Цена, ₽ в месяц, до" name="price-max"></div></div>
-    <label class="field"><span>Кто&nbsp;сдаёт</span><select class="select" name="who"><option value="">Все</option><option>Собственник</option><option>Посредник</option></select></label>
-    <button class="btn btn--accent" type="submit">Показать</button>
-  </div>
-  <div class="filters__more" id="more" hidden><label class="field"><span>Высота до&nbsp;низа ферм, м</span><input class="input" inputmode="decimal" placeholder="от" data-f="min" data-key="высота"></label><label class="field"><span>Нагрузка на&nbsp;пол, т/м²</span><input class="input" inputmode="decimal" placeholder="от" data-f="min" data-key="пол"></label><label class="field"><span>Ворота</span><select class="select" data-f="kw"><option value="">Любые</option><option value="док|рамп">Доковые</option><option value="нулев">На&nbsp;нулевой отметке</option></select></label><label class="field"><span>Мощность, кВт</span><input class="input" inputmode="decimal" placeholder="от" data-f="min" data-key="мощность"></label><label class="field"><span>Температурный режим</span><select class="select" data-f="kw"><option value="">Любой</option><option value="отапливаем">Отапливаемый</option><option value="холодн">Холодный</option><option value="зон">Несколько зон</option></select></label><label class="check"><input type="checkbox" data-f="kw" data-kw="фур"><span>Подъезд фуры 40&nbsp;фт</span></label></div>
-  <div class="filters__bar">
-    <button class="linkbtn" type="button" data-toggle aria-controls="more" aria-expanded="false">Ещё&nbsp;параметры</button>
-    <button class="linklike" type="reset">Сбросить фильтры</button>
-  </div>
-</form>
-    <div class="results__head">
-      <p data-count>Найдено 6 предложений</p>
-      <label class="field"><span class="sr">Сортировка</span><select class="select" style="min-height:42px" data-sort><option value="new">Сначала новые</option><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option></select></label>
-    </div>
-    <div class="cards" data-cards>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="540000" data-area="1200" data-city="Краснодар" data-who="Собственник" data-feat="высота 9 м|пол 5 т/м²|4 дока|отапливаемый" data-idx="0">
-  <a class="card__img" href="obyavlenie-sk-1.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-1.jpg" alt="Склад со стеллажами красного цвета" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">540&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-1.html">Склад класса B, 1&nbsp;200&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, промзона<br>450&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Высота 9&nbsp;м</li><li>Пол&nbsp;5&nbsp;т/м²</li><li>4 дока</li><li>Отапливаемый</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-1.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="prod" data-tag="prod" data-price="270000" data-area="600" data-city="Краснодар" data-who="Собственник" data-feat="кран-балка 5 т|мощность 150 квт|высота 8 м" data-idx="1">
-  <a class="card__img" href="obyavlenie-pr-1.html" tabindex="-1" aria-hidden="true"><img src="assets/img/pr-1.jpg" alt="Просторный производственный цех" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Производство</p>
-    <p class="card__price">270&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-pr-1.html">Производственный цех, 600&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, северная зона<br>450&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Кран-балка 5 т</li><li>Мощность 150&nbsp;кВт</li><li>Высота 8&nbsp;м</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-pr-1.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="390000" data-area="650" data-city="Москва" data-who="Посредник" data-feat="высота 8 м|пол 6 т/м²|рампа|подъезд фуры 40 фт" data-idx="2">
-  <a class="card__img" href="obyavlenie-sk-2.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-2.jpg" alt="Высокие стеллажи в просторном складе" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">390&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-2.html">Склад с&nbsp;рампой, 650&nbsp;м²</a></h3>
-    <p class="card__meta">Москва и&nbsp;область, Подольск<br>600&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Высота 8&nbsp;м</li><li>Пол&nbsp;6&nbsp;т/м²</li><li>Рампа</li><li>Подъезд фуры 40&nbsp;фт</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-2.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="1350000" data-area="3000" data-city="Екатеринбург" data-who="Собственник" data-feat="высота 12 м|пол 8 т/м²|охрана круглосуточно" data-idx="3">
-  <a class="card__img" href="obyavlenie-sk-3.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-3.jpg" alt="Складской комплекс, вид сверху" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">1&nbsp;350&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-3.html">Складской комплекс, 3&nbsp;000&nbsp;м²</a></h3>
-    <p class="card__meta">Екатеринбург, промзона<br>450&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Высота 12&nbsp;м</li><li>Пол&nbsp;8&nbsp;т/м²</li><li>Охрана круглосуточно</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-3.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="prod" data-tag="prod" data-price="506000" data-area="1100" data-city="Казань" data-who="Собственник" data-feat="мощность 250 квт|кран-балка|отапливаемый" data-idx="4">
-  <a class="card__img" href="obyavlenie-pr-2.html" tabindex="-1" aria-hidden="true"><img src="assets/img/pr-2.jpg" alt="Производственный зал с оранжевыми колоннами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Производство</p>
-    <p class="card__price">506&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-pr-2.html">Цех&nbsp;с&nbsp;мощностью 250&nbsp;кВт, 1&nbsp;100&nbsp;м²</a></h3>
-    <p class="card__meta">Казань, промзона<br>460&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Мощность 250&nbsp;кВт</li><li>Кран-балка</li><li>Отапливаемый</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-pr-2.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="900000" data-area="1800" data-city="Казань" data-who="Посредник" data-feat="6 доков|высота 10 м|пол 5 т/м²" data-idx="5">
-  <a class="card__img" href="obyavlenie-sk-5.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-5.jpg" alt="Грузовые прицепы у доковых ворот" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">900&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-5.html">Склад с&nbsp;доками, 1&nbsp;800&nbsp;м²</a></h3>
-    <p class="card__meta">Казань, южная зона<br>500&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>6 доков</li><li>Высота 10&nbsp;м</li><li>Пол&nbsp;5&nbsp;т/м²</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-5.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="189000" data-area="420" data-city="Ростов-на-Дону" data-who="Собственник" data-feat="ворота на нулевой|высота 6 м|холодный" data-idx="10" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-sk-4.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-4.jpg" alt="Склад с большими синими воротами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">189&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-4.html">Склад на&nbsp;нулевой отметке, 420&nbsp;м²</a></h3>
-    <p class="card__meta">Ростов-на-Дону, промзона<br>450&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Ворота на&nbsp;нулевой</li><li>Высота 6&nbsp;м</li><li>Холодный</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-4.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="sklad" data-tag="sklad" data-price="441000" data-area="900" data-city="Новосибирск" data-who="Собственник" data-feat="стеллажи|высота 10 м|отапливаемый" data-idx="11" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-sk-6.html" tabindex="-1" aria-hidden="true"><img src="assets/img/sk-6.jpg" alt="Длинный проход между высокими стеллажами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--sklad)"><i></i>Склад</p>
-    <p class="card__price">441&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-sk-6.html">Склад стеллажного хранения, 900&nbsp;м²</a></h3>
-    <p class="card__meta">Новосибирск, промзона<br>490&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Стеллажи</li><li>Высота 10&nbsp;м</li><li>Отапливаемый</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-sk-6.html">Подробнее</a>
-  </div>
-</article>
-    </div>
-    <p class="empty" data-empty hidden>Ничего не&nbsp;нашли. Измените параметры или <button class="linklike" type="button" data-reset>сбросьте фильтры</button>.</p>
-    <div class="more"><button class="btn btn--ghost" type="button" data-more-btn>Показать ещё</button></div>
-  </div>
-</section>
-
-<section class="sec sec--tight">
-  <div class="wrap split">
-    <div class="split__a split__a--dark on-dark"><h2 class="h2">Ищете склад или&nbsp;цех?</h2><p>Подберите помещение по&nbsp;параметрам и&nbsp;свяжитесь с&nbsp;владельцем напрямую.</p><a class="btn btn--light" href="snyat.html">Снять помещение</a></div>
-    <div class="split__a split__a--accent"><h2 class="h2">Сдаёте склад или&nbsp;цех?</h2><p>Разместите объявление бесплатно. Проверим его&nbsp;и&nbsp;опубликуем в&nbsp;каталоге.</p><a class="btn" href="sdat.html">Сдать помещение</a></div>
-  </div>
-</section>
 </main>
 <!-- WP: footer.php + меню «Подвал» -->
 <footer class="site-footer on-dark">
@@ -228,9 +51,9 @@
     </div>
     <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
     <div><h2>Сервис</h2><ul>
-      <li><a href="snyat.html">Снять помещение</a></li>
-      <li><a href="sdat.html">Сдать помещение</a></li>
-      <li><a href="sdat.html#vhod">Личный кабинет</a></li>
+      <li><a href="index.html" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
       <li><a href="pravila.html">Правила размещения</a></li>
       <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
       <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
@@ -245,6 +68,20 @@
   <div class="wrap foot__bottom"><span>© 2026 Рабочее название проекта. Владелец сайта: [ФИО или&nbsp;название, ИНН]</span><span>Фото: Pexels</span></div>
 </footer>
 
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
 
 <!-- WP: плагин cookie-плашки -->
 <div class="cookie" role="region" aria-label="Cookie" hidden>

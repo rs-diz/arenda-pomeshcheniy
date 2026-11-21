@@ -12,31 +12,22 @@
 </head>
 <body class="is-bw" id="top">
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<!-- WP: header.php + меню «Главное» -->
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
 <header class="site-header">
   <div class="wrap site-header__in">
     <a class="logo" href="index.html#top" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
-    <div class="menu" id="menu">
-      <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
-      <div class="act">
-        <a class="link-login" href="sdat.html#vhod">Войти</a>
-        <a class="btn btn--ghost btn--sm" href="sdat.html">Сдать</a>
-        <a class="btn btn--sm" href="snyat.html">Снять</a>
-      </div>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html#top" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html#top" data-open="pick-snyat">Снять</a>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i><span class="sr">Меню</span></button>
   </div>
 </header>
 <main id="main">
-<!-- WP: front-page.php, обложка из 4 колонок -->
+<!-- WP: front-page.php, обложка из 4 колонок. Клик по фото открывает страницу типа: сдать или снять -->
 <section class="cover">
-  <div class="wrap cover__head">
-    <h1 class="h1">Аренда помещений для&nbsp;бизнеса</h1>
-    <div class="cover__side">
-      <p>Склады, магазины, офисы и&nbsp;гаражи. Выберите тип&nbsp;помещения, затем сдайте своё или&nbsp;найдите нужное. Сервис бесплатный.</p>
-      <div class="btns"><a class="btn" href="snyat.html">Снять помещение</a><a class="btn btn--ghost" href="sdat.html">Сдать помещение</a></div>
-    </div>
-  </div>
+  <h1 class="sr">Аренда помещений для&nbsp;бизнеса: склады, магазины, офисы, гаражи</h1>
   <div class="cover__cols">
     <a class="col col--plain" href="sklady-proizvodstva.html">
       <img src="assets/img/cover-sklad.jpg" alt="Складской комплекс с жёлтыми доковыми воротами" width="1600" height="1067">
@@ -60,7 +51,7 @@
 <!-- WP: блок «Ряд кнопок» -->
 <div class="wrap">
   <nav class="actions" aria-label="Быстрые действия">
-    <a href="sdat.html#vhod"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M5 27c1-6 5.5-9 11-9s10 3 11 9"/></svg><span><b>Личный кабинет</b><span>Объявления, статусы и&nbsp;профиль</span></span></a>
+    <a href="kabinet.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M5 27c1-6 5.5-9 11-9s10 3 11 9"/></svg><span><b>Личный кабинет</b><span>Объявления, статусы и&nbsp;профиль</span></span></a>
     <a href="razdel.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="9" height="9"/><rect x="18" y="5" width="9" height="9"/><rect x="5" y="18" width="9" height="9"/><rect x="18" y="18" width="9" height="9"/></svg><span><b>Название кнопки</b><span>Рыбный текст для&nbsp;описания кнопки</span></span></a>
     <a href="podderzhka.html"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17v-2a10 10 0 0 1 20 0v2"/><rect x="4" y="17" width="5" height="8" rx="1"/><rect x="23" y="17" width="5" height="8" rx="1"/><path d="M26 25c0 3-3 4-7 4"/></svg><span><b>Поддержка и&nbsp;связь</b><span>Поможем с&nbsp;объявлением или&nbsp;входом</span></span></a>
   </nav>
@@ -77,7 +68,7 @@
           <li><div><b>Сверьте параметры</b></div></li>
           <li><div><b>Свяжитесь с&nbsp;владельцем</b></div></li>
         </ol>
-        <a class="btn" href="snyat.html">Снять помещение</a>
+        <a class="btn" href="index.html#top" data-open="pick-snyat">Снять помещение</a>
       </div>
       <div class="role role--dark on-dark">
         <h3 class="h3">Если вы&nbsp;сдаёте</h3>
@@ -86,12 +77,11 @@
           <li><div><b>Заполните объявление</b></div></li>
           <li><div><b>Дождитесь проверки</b></div></li>
         </ol>
-        <a class="btn btn--light" href="sdat.html">Сдать помещение</a>
+        <a class="btn btn--light" href="index.html#top" data-open="pick-sdat">Сдать помещение</a>
       </div>
     </div>
   </div>
 </section>
-
 
 <section class="sec" style="padding-top:8px" id="podderzhat">
   <div class="wrap">
@@ -101,7 +91,6 @@
     </div>
   </div>
 </section>
-
 </main>
 <!-- WP: footer.php + меню «Подвал» -->
 <footer class="site-footer on-dark">
@@ -112,9 +101,9 @@
     </div>
     <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
     <div><h2>Сервис</h2><ul>
-      <li><a href="snyat.html">Снять помещение</a></li>
-      <li><a href="sdat.html">Сдать помещение</a></li>
-      <li><a href="sdat.html#vhod">Личный кабинет</a></li>
+      <li><a href="index.html#top" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html#top" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
       <li><a href="pravila.html">Правила размещения</a></li>
       <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
       <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
@@ -134,10 +123,24 @@
     <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
     <h2 class="h2" id="choose-t">Что&nbsp;вы&nbsp;хотите сделать?</h2>
     <div class="modal__opts">
-      <a class="opt opt--fill" href="snyat.html"><b>Снять помещение</b><span>Склад, магазин, офис или&nbsp;гараж. Поиск бесплатный.</span></a>
-      <a class="opt" href="sdat.html"><b>Сдать помещение</b><span>Разместите объявление бесплатно после подтверждения номера.</span></a>
+      <button class="opt opt--fill" type="button" data-open="pick-snyat"><b>Снять помещение</b><span>Склад, магазин, офис или&nbsp;гараж. Поиск бесплатный.</span></button>
+      <button class="opt" type="button" data-open="pick-sdat"><b>Сдать помещение</b><span>Разместите объявление бесплатно после подтверждения номера.</span></button>
     </div>
     <button class="linkbtn modal__skip" type="button" data-close>Пока просто смотрю</button>
+  </div>
+</div>
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
   </div>
 </div>
 
@@ -149,6 +152,6 @@
   </div>
 </div>
 <script src="assets/app.js"></script>
-<!-- Страницы сайта (по этим ссылкам скрипт публикации находит все файлы): href="sklady-proizvodstva.html" href="torgovye-pomeshcheniya.html" href="ofisy.html" href="garazhi-konteynery.html" href="sdat.html" href="snyat.html" href="podderzhka.html" href="podderzhat-proekt.html" href="razdel.html" href="pravila.html" href="politika.html" href="soglashenie.html" href="soglasie-pd.html" href="obyavlenie-sk-1.html" href="obyavlenie-pr-1.html" href="obyavlenie-sk-2.html" href="obyavlenie-sk-3.html" href="obyavlenie-pr-2.html" href="obyavlenie-sk-5.html" href="obyavlenie-sk-4.html" href="obyavlenie-sk-6.html" href="obyavlenie-tg-1.html" href="obyavlenie-tg-2.html" href="obyavlenie-tg-3.html" href="obyavlenie-tg-4.html" href="obyavlenie-tg-5.html" href="obyavlenie-tg-6.html" href="obyavlenie-tg-7.html" href="obyavlenie-tg-8.html" href="obyavlenie-of-1.html" href="obyavlenie-of-2.html" href="obyavlenie-of-3.html" href="obyavlenie-of-4.html" href="obyavlenie-of-5.html" href="obyavlenie-of-6.html" href="obyavlenie-of-7.html" href="obyavlenie-of-8.html" href="obyavlenie-gr-1.html" href="obyavlenie-gr-2.html" href="obyavlenie-gr-3.html" href="obyavlenie-gr-4.html" href="obyavlenie-gr-5.html" href="obyavlenie-gr-6.html" href="obyavlenie-gr-7.html" href="obyavlenie-gr-8.html" -->
+<!-- Страницы сайта (по этим ссылкам скрипт публикации находит все файлы): href="sklady-proizvodstva.html" href="torgovye-pomeshcheniya.html" href="ofisy.html" href="garazhi-konteynery.html" href="snyat-sklad.html" href="snyat-torg.html" href="snyat-office.html" href="snyat-garage.html" href="sdat-sklad.html" href="sdat-torg.html" href="sdat-office.html" href="sdat-garage.html" href="vhod.html" href="kabinet.html" href="podderzhka.html" href="podderzhat-proekt.html" href="razdel.html" href="pravila.html" href="politika.html" href="soglashenie.html" href="soglasie-pd.html" href="obyavlenie-sk-1.html" href="obyavlenie-pr-1.html" href="obyavlenie-sk-2.html" href="obyavlenie-sk-3.html" href="obyavlenie-pr-2.html" href="obyavlenie-sk-5.html" href="obyavlenie-sk-4.html" href="obyavlenie-sk-6.html" href="obyavlenie-tg-1.html" href="obyavlenie-tg-2.html" href="obyavlenie-tg-3.html" href="obyavlenie-tg-4.html" href="obyavlenie-tg-5.html" href="obyavlenie-tg-6.html" href="obyavlenie-tg-7.html" href="obyavlenie-tg-8.html" href="obyavlenie-of-1.html" href="obyavlenie-of-2.html" href="obyavlenie-of-3.html" href="obyavlenie-of-4.html" href="obyavlenie-of-5.html" href="obyavlenie-of-6.html" href="obyavlenie-of-7.html" href="obyavlenie-of-8.html" href="obyavlenie-gr-1.html" href="obyavlenie-gr-2.html" href="obyavlenie-gr-3.html" href="obyavlenie-gr-4.html" href="obyavlenie-gr-5.html" href="obyavlenie-gr-6.html" href="obyavlenie-gr-7.html" href="obyavlenie-gr-8.html" -->
 </body>
 </html>

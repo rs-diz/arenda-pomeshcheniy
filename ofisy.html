@@ -4,215 +4,43 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Аренда офисов | Помещения</title>
-<meta name="description" content="Офисы в бизнес-центрах и отдельных зданиях: от небольших кабинетов до просторных open space с современным ремонтом.">
+<title>Офисы: сдать или&nbsp;снять | Помещения</title>
+<meta name="description" content="Офисы. Выберите, что вам нужно: снять помещение в каталоге или бесплатно разместить объявление.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' fill='%23F2B91F'/%3E%3Crect x='17' y='3' width='12' height='12' fill='%23C4492B'/%3E%3Crect x='3' y='17' width='12' height='12' fill='%233D7B5B'/%3E%3Crect x='17' y='17' width='12' height='12' fill='%232B7BA3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Sofia+Sans+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="t-office" id="top">
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<!-- WP: header.php + меню «Главное» -->
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
 <header class="site-header">
   <div class="wrap site-header__in">
     <a class="logo" href="index.html" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
-    <div class="menu" id="menu">
-      <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a is-active" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
-      <div class="act">
-        <a class="link-login" href="sdat.html#vhod">Войти</a>
-        <a class="btn btn--ghost btn--sm" href="sdat.html">Сдать</a>
-        <a class="btn btn--sm" href="snyat.html">Снять</a>
-      </div>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a is-active" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html" data-open="pick-snyat">Снять</a>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i><span class="sr">Меню</span></button>
   </div>
 </header>
 <main id="main">
 <div class="wrap">
   <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><span aria-current="page">Офисы</span></li></ol></nav>
-  <!-- WP: шаблон архива категории (taxonomy-listing_category), блок «Первый экран» -->
-  <section class="hero">
-    <div class="hero__txt">
-      <h1 class="h1 h1--page">Аренда офисов</h1>
-      <p class="lead">Офисы в&nbsp;бизнес-центрах и&nbsp;отдельных зданиях: от&nbsp;небольших кабинетов до&nbsp;просторных open space с&nbsp;современным ремонтом.</p>
-      <div class="btns">
-        <a class="btn btn--accent" href="#offers">Смотреть предложения</a>
-        <a class="btn btn--ghost" href="sdat.html">Сдать помещение</a>
+  <!-- WP: страница-выбор для категории: две кнопки ведут на архив категории и на «Добавить объявление» -->
+  <section class="hub">
+    <div class="hub__txt">
+      <h1 class="h1 h1--page">Хотите сдать офис или&nbsp;снять?</h1>
+      <p class="lead">Офисы. Поиск и&nbsp;размещение объявлений бесплатны.</p>
+      <div class="hub__opts">
+        <a class="choice choice--dark on-dark" href="snyat-office.html"><span class="choice__t">Снять офис</span><span class="choice__d">Каталог офисов: от&nbsp;небольших кабинетов до&nbsp;просторных open space с&nbsp;современным ремонтом.</span><span class="btn btn--light">Смотреть предложения</span></a>
+        <a class="choice choice--accent" href="sdat-office.html"><span class="choice__t">Сдать офис</span><span class="choice__d">Бесплатное объявление: подтвердите номер, заполните параметры офиса и&nbsp;добавьте фото.</span><span class="btn">Разместить объявление</span></a>
       </div>
-      <p class="hero__note">Поиск и&nbsp;размещение бесплатны.</p>
     </div>
     <div class="hero__img"><img src="assets/img/hero-office.jpg" alt="Светлый офис с большими окнами и растениями" width="1600" height="1067"></div>
   </section>
+  <nav class="typechips hub__other" aria-label="Другой тип помещения"><span>Другой тип&nbsp;помещения:</span><a href="sklady-proizvodstva.html" style="--c:var(--sklad)"><i></i>Склады и&nbsp;производства</a><a href="torgovye-pomeshcheniya.html" style="--c:var(--torg)"><i></i>Торговые помещения</a><a href="garazhi-konteynery.html" style="--c:var(--garage)"><i></i>Гаражи и&nbsp;контейнеры</a></nav>
 </div>
-
-<!-- WP: блок «Плашки параметров» (группа блоков или повторитель ACF) -->
-<section class="sec" id="params" style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec__head">
-      <h2 class="h2">Что&nbsp;проверить до&nbsp;выезда на&nbsp;показ</h2>
-      <p class="lead">Площадь в&nbsp;объявлении ещё&nbsp;не&nbsp;значит, что&nbsp;помещение подойдёт. Сверьте параметры заранее и&nbsp;выезжайте только на&nbsp;подходящие.</p>
-    </div>
-    <ul class="params">
-<li class="param"><span class="param__u">м²</span><h3>Площадь и&nbsp;планировка</h3><p>Кабинеты или&nbsp;open space: прикиньте, сколько рабочих мест поместится.</p></li>
-<li class="param"><span class="param__u">класс</span><h3>Здание и&nbsp;класс</h3><p>Бизнес-центр, отдельное здание или&nbsp;первый этаж жилого дома. Это&nbsp;влияет на&nbsp;ставку и&nbsp;на&nbsp;впечатление клиентов.</p></li>
-<li class="param"><span class="param__u">Мбит/с</span><h3>Интернет и&nbsp;связь</h3><p>Какие провайдеры подключены и&nbsp;можно ли&nbsp;привести своего.</p></li>
-<li class="param"><span class="param__u">авто</span><h3>Парковка</h3><p>Места для&nbsp;сотрудников и&nbsp;гостей, платные или&nbsp;бесплатные.</p></li>
-<li class="param"><span class="param__u">кВт</span><h3>Электричество и&nbsp;климат</h3><p>Кондиционирование, отопление и&nbsp;мощность для&nbsp;техники.</p></li>
-<li class="param"><span class="param__u">охрана</span><h3>Доступ и&nbsp;безопасность</h3><p>Пропускной режим, видеонаблюдение, доступ вне&nbsp;рабочего времени.</p></li>
-<li class="param"><span class="param__u">мин</span><h3>Транспорт и&nbsp;окружение</h3><p>Сколько идти до&nbsp;остановки или&nbsp;метро, есть ли&nbsp;рядом кафе и&nbsp;удобно ли&nbsp;добираться клиентам.</p></li>
-<li class="param"><span class="param__u">документы</span><h3>Собственник и&nbsp;условия</h3><p>Кто&nbsp;сдаёт, на&nbsp;какой срок договор, включены ли&nbsp;коммунальные платежи.</p></li>
-      <li class="param param--cta"><h3>Найдите помещение, где&nbsp;совпали все&nbsp;параметры</h3><a class="btn" href="#offers">Смотреть предложения</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- WP: архив объявлений с фильтрами (HivePress: форма поиска + сетка объявлений) -->
-<section class="sec sec--tight" id="offers" data-catalog>
-  <div class="wrap">
-    <div class="sec__head"><h2 class="h2">Предложения: офисы</h2></div>
-    <form class="filters" action="#" data-filter-form aria-label="Фильтры">
-  <div class="filters__row">
-    <label class="field"><span>Город</span><select class="select" name="city"><option value="">Любой</option><option value="Краснодар">Краснодар</option><option value="Москва">Москва и&nbsp;область</option><option value="Екатеринбург">Екатеринбург</option><option value="Казань">Казань</option><option value="Новосибирск">Новосибирск</option><option value="Ростов-на-Дону">Ростов-на-Дону</option></select></label>
-    <div class="field"><span>Площадь, м²</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Площадь, м², от" name="area-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Площадь, м², до" name="area-max"></div></div>
-    <div class="field"><span>Цена, ₽ в&nbsp;месяц</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Цена, ₽ в месяц, от" name="price-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Цена, ₽ в месяц, до" name="price-max"></div></div>
-    <label class="field"><span>Кто&nbsp;сдаёт</span><select class="select" name="who"><option value="">Все</option><option>Собственник</option><option>Посредник</option></select></label>
-    <button class="btn btn--accent" type="submit">Показать</button>
-  </div>
-  <div class="filters__more" id="more" hidden><label class="field"><span>Класс здания</span><select class="select" data-f="kw"><option value="">Любой</option><option value="класс a">A</option><option value="класс b">B</option><option value="класс c">C</option></select></label><label class="field"><span>Планировка</span><select class="select" data-f="kw"><option value="">Любая</option><option value="open space">Open space</option><option value="кабинет">Кабинеты</option></select></label><label class="check"><input type="checkbox" data-f="kw" data-kw="парковк"><span>Парковка</span></label><label class="check"><input type="checkbox" data-f="kw" data-kw="мебел"><span>Мебель включена</span></label><label class="check"><input type="checkbox" data-f="kw" data-kw="кондиционир"><span>Кондиционирование</span></label><label class="check"><input type="checkbox" data-f="kw" data-kw="охран"><span>Охрана</span></label></div>
-  <div class="filters__bar">
-    <button class="linkbtn" type="button" data-toggle aria-controls="more" aria-expanded="false">Ещё&nbsp;параметры</button>
-    <button class="linklike" type="reset">Сбросить фильтры</button>
-  </div>
-</form>
-    <div class="results__head">
-      <p data-count>Найдено 6 предложений</p>
-      <label class="field"><span class="sr">Сортировка</span><select class="select" style="min-height:42px" data-sort><option value="new">Сначала новые</option><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option></select></label>
-    </div>
-    <div class="cards" data-cards>
-<article class="card" data-type="office" data-tag="office" data-price="168000" data-area="120" data-city="Краснодар" data-who="Собственник" data-feat="современный ремонт|open space|переговорная" data-idx="0">
-  <a class="card__img" href="obyavlenie-of-1.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-1.jpg" alt="Светлый офис с рабочими столами и растениями" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">168&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-1.html">Офис с&nbsp;видом на&nbsp;парк, 120&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, центр<br>1&nbsp;400&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Современный ремонт</li><li>Open space</li><li>Переговорная</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-1.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="192000" data-area="64" data-city="Москва" data-who="Посредник" data-feat="класс b|охрана|парковка" data-idx="1">
-  <a class="card__img" href="obyavlenie-of-2.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-2.jpg" alt="Современный офис с белой мебелью" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">192&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-2.html">Офис в&nbsp;бизнес-центре, 64&nbsp;м²</a></h3>
-    <p class="card__meta">Москва, бизнес-центр<br>3&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Класс B</li><li>Охрана</li><li>Парковка</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-2.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="119000" data-area="85" data-city="Екатеринбург" data-who="Собственник" data-feat="панорамные окна|кухня|интернет в здании" data-idx="2">
-  <a class="card__img" href="obyavlenie-of-3.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-3.jpg" alt="Офис с большими окнами и зелёными растениями" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">119&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-3.html">Светлый офис, 85&nbsp;м²</a></h3>
-    <p class="card__meta">Екатеринбург, центр<br>1&nbsp;400&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Панорамные окна</li><li>Кухня</li><li>Интернет в&nbsp;здании</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-3.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="240000" data-area="200" data-city="Казань" data-who="Собственник" data-feat="мебель включена|приёмная|переговорные" data-idx="3">
-  <a class="card__img" href="obyavlenie-of-4.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-4.jpg" alt="Рабочие места с деревянными столами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">240&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-4.html">Коворкинг-площадка, 200&nbsp;м²</a></h3>
-    <p class="card__meta">Казань, центр<br>1&nbsp;200&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Мебель включена</li><li>Приёмная</li><li>Переговорные</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-4.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="72000" data-area="45" data-city="Новосибирск" data-who="Собственник" data-feat="отдельный вход|кабинеты|мокрая точка" data-idx="4">
-  <a class="card__img" href="obyavlenie-of-5.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-5.jpg" alt="Офис в лофт-стиле со столами и растениями" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">72&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-5.html">Офис в&nbsp;центре, 45&nbsp;м²</a></h3>
-    <p class="card__meta">Новосибирск, центр<br>1&nbsp;600&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Отдельный вход</li><li>Кабинеты</li><li>Мокрая точка</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-5.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="210000" data-area="150" data-city="Ростов-на-Дону" data-who="Посредник" data-feat="свободная планировка|кондиционирование|лифт" data-idx="5">
-  <a class="card__img" href="obyavlenie-of-6.html" tabindex="-1" aria-hidden="true"><img src="assets/img/of-6.jpg" alt="Светлый офис с деревянными столами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">210&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-6.html">Офис на&nbsp;этаже, 150&nbsp;м²</a></h3>
-    <p class="card__meta">Ростов-на-Дону, центр<br>1&nbsp;400&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Свободная планировка</li><li>Кондиционирование</li><li>Лифт</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-6.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="142000" data-area="95" data-city="Краснодар" data-who="Собственник" data-feat="панорамные окна|open space|кондиционирование" data-idx="10" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-of-7.html" tabindex="-1" aria-hidden="true"><img src="assets/img/hero-office.jpg" alt="Офис с большими окнами и растениями на подоконнике" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">142&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-7.html">Офис с&nbsp;панорамными окнами, 95&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, центр<br>1&nbsp;495&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Панорамные окна</li><li>Open space</li><li>Кондиционирование</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-7.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="office" data-tag="office" data-price="196000" data-area="140" data-city="Казань" data-who="Собственник" data-feat="современный ремонт|переговорная|парковка" data-idx="11" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-of-8.html" tabindex="-1" aria-hidden="true"><img src="assets/img/cover-office.jpg" alt="Просторный офис с видом на деревья" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--office)"><i></i>Офис</p>
-    <p class="card__price">196&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-of-8.html">Офис с&nbsp;видом на&nbsp;деревья, 140&nbsp;м²</a></h3>
-    <p class="card__meta">Казань, центр<br>1&nbsp;400&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Современный ремонт</li><li>Переговорная</li><li>Парковка</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-of-8.html">Подробнее</a>
-  </div>
-</article>
-    </div>
-    <p class="empty" data-empty hidden>Ничего не&nbsp;нашли. Измените параметры или <button class="linklike" type="button" data-reset>сбросьте фильтры</button>.</p>
-    <div class="more"><button class="btn btn--ghost" type="button" data-more-btn>Показать ещё</button></div>
-  </div>
-</section>
-
-<section class="sec sec--tight">
-  <div class="wrap split">
-    <div class="split__a split__a--dark on-dark"><h2 class="h2">Ищете офис?</h2><p>Подберите помещение по&nbsp;параметрам и&nbsp;свяжитесь с&nbsp;владельцем напрямую.</p><a class="btn btn--light" href="snyat.html">Снять помещение</a></div>
-    <div class="split__a split__a--accent"><h2 class="h2">Сдаёте офис?</h2><p>Разместите объявление бесплатно. Проверим его&nbsp;и&nbsp;опубликуем в&nbsp;каталоге.</p><a class="btn" href="sdat.html">Сдать помещение</a></div>
-  </div>
-</section>
 </main>
 <!-- WP: footer.php + меню «Подвал» -->
 <footer class="site-footer on-dark">
@@ -223,9 +51,9 @@
     </div>
     <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
     <div><h2>Сервис</h2><ul>
-      <li><a href="snyat.html">Снять помещение</a></li>
-      <li><a href="sdat.html">Сдать помещение</a></li>
-      <li><a href="sdat.html#vhod">Личный кабинет</a></li>
+      <li><a href="index.html" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
       <li><a href="pravila.html">Правила размещения</a></li>
       <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
       <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
@@ -240,6 +68,20 @@
   <div class="wrap foot__bottom"><span>© 2026 Рабочее название проекта. Владелец сайта: [ФИО или&nbsp;название, ИНН]</span><span>Фото: Pexels</span></div>
 </footer>
 
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
 
 <!-- WP: плагин cookie-плашки -->
 <div class="cookie" role="region" aria-label="Cookie" hidden>

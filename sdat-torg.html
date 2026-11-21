@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сдайте торговое помещение бесплатно: регистрация и&nbsp;объявление | Помещения</title>
+<meta name="description" content="Подтвердите номер телефона, заполните параметры помещения, и после проверки объявление появится в каталоге.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' fill='%23F2B91F'/%3E%3Crect x='17' y='3' width='12' height='12' fill='%23C4492B'/%3E%3Crect x='3' y='17' width='12' height='12' fill='%233D7B5B'/%3E%3Crect x='17' y='17' width='12' height='12' fill='%232B7BA3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Sofia+Sans+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="t-torg" id="top">
+<a class="skip" href="#main">К&nbsp;содержимому</a>
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="logo" href="index.html" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a is-active" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html" data-open="pick-snyat">Снять</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><span aria-current="page">Сдать</span></li></ol></nav>
+  <!-- WP: страница «Добавить объявление» с выбранной категорией + регистрация по номеру -->
+  <section class="lk">
+    <div class="lk__txt">
+      <h1 class="h1 h1--page">Сдайте торговое помещение бесплатно</h1>
+      <p class="lead">Подтвердите номер телефона, заполните параметры помещения, и&nbsp;после проверки объявление появится в&nbsp;каталоге.</p>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><div><b>Размещение бесплатно</b><span>Не&nbsp;берём комиссию и&nbsp;не&nbsp;продаём платное продвижение.</span></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><div><b>Только подтверждённые владельцы</b><span>Номер проверяем звонком или&nbsp;SMS, поэтому арендаторы видят реальные объявления.</span></div></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><div><b>Объявление проверяют</b><span>Если что-то нужно исправить, в&nbsp;кабинете подскажем что&nbsp;именно.</span></div></li>
+      </ul>
+    </div>
+    <div class="auth" id="vhod">
+      <div class="tabs" data-tabs role="tablist" aria-label="Регистрация или вход">
+        <button role="tab" id="t-reg" aria-controls="tab-reg" aria-selected="true" data-hash="registratsiya" type="button">Регистрация</button>
+        <button role="tab" id="t-log" aria-controls="tab-log" aria-selected="false" data-hash="vhod" tabindex="-1" type="button">Вход</button>
+      </div>
+      <div class="auth__pane" id="tab-reg" role="tabpanel" aria-labelledby="t-reg" data-flow>
+        <div class="stepper"><div class="stepper__bars"><i class="on"></i><i></i></div><p class="js-step-txt">Шаг&nbsp;1 из&nbsp;2: номер телефона</p></div>
+        <form class="stack js-phone-form" novalidate>
+    <label class="field"><span>Номер телефона</span><input class="input js-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" value="+7"></label>
+    <label class="check"><input type="checkbox" class="js-consent"><span>Даю <a href="soglasie-pd.html" target="_blank" rel="noopener">согласие на&nbsp;обработку персональных данных</a> и&nbsp;принимаю <a href="pravila.html" target="_blank" rel="noopener">правила размещения</a></span></label>
+    <button class="btn js-go" type="submit" disabled>Получить код</button>
+    <p class="hint">Мы&nbsp;позвоним на&nbsp;этот номер. Отвечать не&nbsp;нужно: введите последние 4 цифры номера, с&nbsp;которого позвонили. Если звонок не&nbsp;дойдёт, отправим SMS.</p>
+  </form>
+  <form class="stack js-code-form" hidden novalidate>
+    <p>Звоним на <b class="js-show"></b>. Введите последние 4 цифры номера, с&nbsp;которого позвонили.</p>
+    <div class="code" role="group" aria-label="Последние 4 цифры номера">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 1" autocomplete="one-time-code">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 2">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 3">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 4">
+    </div>
+    <p class="msg msg--bad js-err" role="alert" hidden>Цифры не&nbsp;совпали. Проверьте номер, с&nbsp;которого позвонили, и&nbsp;введите последние 4 цифры ещё&nbsp;раз.</p>
+    <div class="btns" style="align-items:center;gap:24px">
+      <button type="button" class="linklike js-resend" disabled>Позвонить ещё&nbsp;раз&nbsp;через 45&nbsp;с</button>
+      <button type="button" class="linklike js-change">Изменить номер</button>
+    </div>
+  </form>
+  <div class="done js-done" hidden>
+    <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M17 29l8 8 15-17"/></svg>
+    <h3 class="h3">Номер подтверждён</h3>
+    <p>Теперь можно разместить объявление.</p>
+    <a class="btn" href="#obyavlenie">Заполнить объявление</a>
+    <button type="button" class="linklike js-logout">Выйти из&nbsp;аккаунта</button>
+  </div>
+        <p class="proto-note">В&nbsp;прототипе подойдут любые 4 цифры, кроме 0000: так&nbsp;мы&nbsp;показываем ошибку.</p>
+      </div>
+      <div class="auth__pane" id="tab-log" role="tabpanel" aria-labelledby="t-log" data-flow hidden>
+        <form class="stack js-phone-form" novalidate>
+    <label class="field"><span>Номер телефона</span><input class="input js-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" value="+7"></label>
+    
+    <button class="btn js-go" type="submit" disabled>Получить код</button>
+    <p class="hint">Мы&nbsp;позвоним на&nbsp;этот номер. Отвечать не&nbsp;нужно: введите последние 4 цифры номера, с&nbsp;которого позвонили. Если звонок не&nbsp;дойдёт, отправим SMS.</p>
+  </form>
+  <form class="stack js-code-form" hidden novalidate>
+    <p>Звоним на <b class="js-show"></b>. Введите последние 4 цифры номера, с&nbsp;которого позвонили.</p>
+    <div class="code" role="group" aria-label="Последние 4 цифры номера">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 1" autocomplete="one-time-code">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 2">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 3">
+      <input inputmode="numeric" maxlength="1" aria-label="Цифра 4">
+    </div>
+    <p class="msg msg--bad js-err" role="alert" hidden>Цифры не&nbsp;совпали. Проверьте номер, с&nbsp;которого позвонили, и&nbsp;введите последние 4 цифры ещё&nbsp;раз.</p>
+    <div class="btns" style="align-items:center;gap:24px">
+      <button type="button" class="linklike js-resend" disabled>Позвонить ещё&nbsp;раз&nbsp;через 45&nbsp;с</button>
+      <button type="button" class="linklike js-change">Изменить номер</button>
+    </div>
+  </form>
+  <div class="done js-done" hidden>
+    <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25"/><path d="M17 29l8 8 15-17"/></svg>
+    <h3 class="h3">Вы&nbsp;вошли</h3>
+    <p>Объявления и&nbsp;профиль в&nbsp;вашем кабинете.</p>
+    <a class="btn" href="#obyavlenie">Заполнить объявление</a>
+    <button type="button" class="linklike js-logout">Выйти из&nbsp;аккаунта</button>
+  </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="sec" id="obyavlenie" style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec__head"><h2 class="h2">Объявление: торговое помещение</h2><p class="lead">Заполните параметры. Объявление появится на&nbsp;сайте после проверки.</p></div>
+    <div class="cab"><div class="cab__panel">
+      <form class="form" id="newad-form" action="#" data-name="Торговое помещение" data-img="tg-1">
+        <div class="grid2">
+          <label class="field"><span>Город</span><input class="input" name="city" placeholder="Например, Краснодар"></label>
+          <label class="field"><span>Район или&nbsp;улица</span><input class="input" placeholder="Без номера дома, если не хотите его показывать"></label>
+        </div>
+        <div class="grid2">
+          <label class="field"><span>Площадь, м²</span><input class="input" name="area" inputmode="numeric" placeholder="Например, 320"></label>
+          <label class="field"><span>Цена, ₽ в&nbsp;месяц</span><input class="input" name="price" inputmode="numeric" placeholder="Например, 150 000"></label>
+        </div>
+        <fieldset class="fieldset"><legend>Кто&nbsp;сдаёт</legend><div class="chips"><span><input type="radio" name="who" id="w1" checked><label for="w1">Собственник</label></span><span><input type="radio" name="who" id="w2"><label for="w2">Посредник</label></span></div></fieldset>
+        <fieldset class="fieldset"><legend>Параметры помещения</legend>
+          <div class="grid2"><label class="field"><span>Этаж</span><select class="select"><option>Первый</option><option>Цоколь</option><option>Второй и&nbsp;выше</option></select></label><label class="field"><span>Вход</span><select class="select"><option>Отдельный с&nbsp;улицы</option><option>Из&nbsp;торгового центра</option></select></label><label class="field"><span>Электрическая мощность, кВт</span><input class="input" inputmode="decimal" placeholder="Например, 18"></label><label class="check"><input type="checkbox"><span>Витринные окна</span></label><label class="check"><input type="checkbox"><span>Вытяжка и&nbsp;вентиляция</span></label><label class="check"><input type="checkbox"><span>Первая линия</span></label></div>
+        </fieldset>
+        <label class="field"><span>Описание</span><textarea class="textarea" placeholder="Расскажите о помещении: состояние, что рядом, на каких условиях сдаёте."></textarea><span class="hint">Без&nbsp;телефонов и&nbsp;ссылок: контакты покажем в&nbsp;отдельном поле.</span></label>
+        <label class="drop"><input class="sr" type="file" multiple accept="image/*" data-files><b data-files-text>Перетащите фото или&nbsp;выберите файлы</b><span class="hint">До&nbsp;10 фото в&nbsp;формате JPG&nbsp;или&nbsp;PNG</span></label>
+        <label class="field"><span>Контактный телефон</span><input class="input" value="+7 (900) 000-00-00" readonly><span class="hint">Номер подтверждается при&nbsp;входе. Его&nbsp;увидят вошедшие пользователи.</span></label>
+        <label class="check"><input type="checkbox" required><span>Подтверждаю, что&nbsp;я&nbsp;собственник помещения или&nbsp;имею право его&nbsp;сдавать</span></label>
+        <div class="btns" style="align-items:center;gap:20px"><button class="btn" type="submit">Отправить на&nbsp;проверку</button><span class="hint">Объявление появится на&nbsp;сайте после проверки.</span></div>
+        <p class="msg msg--bad" data-need-auth hidden>Сначала подтвердите номер телефона. <a href="#vhod">Подтвердить номер</a></p>
+        <div class="msg msg--ok" data-newad-done hidden><p>Объявление отправлено на&nbsp;проверку. Статус виден в&nbsp;личном кабинете.</p><div class="btns" style="margin-top:10px"><a class="btn btn--sm" href="kabinet.html">Перейти в&nbsp;кабинет</a></div></div>
+      </form>
+    </div></div>
+  </div>
+</section>
+
+<!-- WP: список запросов арендаторов этого типа (отдельный тип записей или расширение запросов) -->
+<section class="sec" id="spros" style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec__head"><h2 class="h2">Кто&nbsp;ищет торговое помещение</h2><p class="lead">Запросы арендаторов. Если ваше помещение подходит, предложите его.</p></div>
+    <div class="reqs">
+<article class="req">
+      <div><p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p><h3>Кофейня, 20-50&nbsp;м²</h3><ul><li>1 этаж</li><li>Отдельный вход</li><li>Электричество от&nbsp;18&nbsp;кВт</li></ul><p>Краснодар и&nbsp;область</p></div>
+      <button class="btn btn--ghost btn--sm" type="button" data-offer>Предложить помещение</button>
+      <p class="msg msg--ok" data-offer-msg hidden>Предложение отправлено. Автор запроса увидит его&nbsp;в&nbsp;своём кабинете.</p>
+    </article>
+<article class="req">
+      <div><p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p><h3>Магазин одежды, 60-100&nbsp;м²</h3><ul><li>Первая линия</li><li>Витринные окна</li><li>Вход с&nbsp;улицы</li></ul><p>Екатеринбург</p></div>
+      <button class="btn btn--ghost btn--sm" type="button" data-offer>Предложить помещение</button>
+      <p class="msg msg--ok" data-offer-msg hidden>Предложение отправлено. Автор запроса увидит его&nbsp;в&nbsp;своём кабинете.</p>
+    </article>
+<article class="req">
+      <div><p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p><h3>Аптека, 40-80&nbsp;м²</h3><ul><li>1 этаж</li><li>Отдельный вход</li><li>Парковка рядом</li></ul><p>Ростов-на-Дону</p></div>
+      <button class="btn btn--ghost btn--sm" type="button" data-offer>Предложить помещение</button>
+      <p class="msg msg--ok" data-offer-msg hidden>Предложение отправлено. Автор запроса увидит его&nbsp;в&nbsp;своём кабинете.</p>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pravila" style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec__head"><h2 class="h2">Правила размещения</h2><p class="lead">Короткая версия. <a href="pravila.html">Полный текст правил</a> на&nbsp;отдельной странице.</p></div>
+    <div class="rules">
+      <div class="rules__col"><h3 class="h3">Можно</h3><ul>
+        <li>Описывать помещение и&nbsp;его&nbsp;параметры</li>
+        <li>Прикладывать реальные фото своего помещения</li>
+        <li>Указывать цену и&nbsp;условия аренды</li>
+        <li>Размещать объявление, если вы&nbsp;собственник или&nbsp;имеете право сдавать помещение</li>
+      </ul></div>
+      <div class="rules__col rules__col--no"><h3 class="h3">Нельзя</h3><ul>
+        <li>Ненормативная лексика и&nbsp;оскорбления</li>
+        <li>Призывы к&nbsp;насилию, экстремизму и&nbsp;любая запрещённая информация</li>
+        <li>Чужие фото и&nbsp;недостоверные данные</li>
+        <li>Телефоны, ссылки и&nbsp;реклама сторонних услуг в&nbsp;описании</li>
+        <li>Дубли одного и&nbsp;того же&nbsp;объявления</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--tight">
+  <div class="wrap split">
+    <div class="split__a split__a--dark on-dark"><h2 class="h2">Ищете торговое помещение?</h2><p>Каталог с&nbsp;фильтрами. Свяжитесь с&nbsp;владельцем напрямую.</p><a class="btn btn--light" href="snyat-torg.html">Снять торговое помещение</a></div>
+    <div class="split__a split__a--accent"><h2 class="h2">Нужна помощь?</h2><p>Поможем со&nbsp;входом, объявлением или&nbsp;жалобой.</p><a class="btn" href="podderzhka.html">Поддержка и&nbsp;связь</a></div>
+  </div>
+</section>
+</main>
+<!-- WP: footer.php + меню «Подвал» -->
+<footer class="site-footer on-dark">
+  <div class="wrap foot">
+    <div>
+      <a class="logo" href="index.html"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
+      <p style="margin-top:18px">Бесплатная площадка, где&nbsp;владельцы сдают, а&nbsp;бизнес снимает склады, магазины, офисы и&nbsp;гаражи. Проект живёт на&nbsp;добровольные пожертвования.</p>
+    </div>
+    <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
+    <div><h2>Сервис</h2><ul>
+      <li><a href="index.html" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
+      <li><a href="pravila.html">Правила размещения</a></li>
+      <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
+      <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
+    </ul></div>
+    <div><h2>Документы</h2><ul>
+      <li><a href="politika.html">Политика конфиденциальности</a></li>
+      <li><a href="soglashenie.html">Пользовательское соглашение</a></li>
+      <li><a href="soglasie-pd.html">Согласие на&nbsp;обработку персональных данных</a></li>
+      <li><a href="mailto:mail@example.ru">mail@example.ru</a></li>
+    </ul></div>
+  </div>
+  <div class="wrap foot__bottom"><span>© 2026 Рабочее название проекта. Владелец сайта: [ФИО или&nbsp;название, ИНН]</span><span>Фото: Pexels</span></div>
+</footer>
+
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+
+<!-- WP: плагин cookie-плашки -->
+<div class="cookie" role="region" aria-label="Cookie" hidden>
+  <div class="wrap cookie__in">
+    <p>Мы&nbsp;используем cookie для&nbsp;статистики. <a href="politika.html#cookie">Подробнее</a></p>
+    <div class="cookie__btns"><button class="btn btn--xs" type="button" data-cookie="all">Принять</button><button class="linklike" type="button" data-cookie="necessary">Только необходимые</button></div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+
+</body>
+</html>

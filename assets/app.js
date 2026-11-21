@@ -6,18 +6,12 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del: function (k) { try { localStorage.removeItem(k); } catch (e) {} }
   };
-  var AUTH = 'pm-auth';
-
-  /* --- меню на телефоне --- */
-  var burger = $('.burger'), menu = $('#menu');
-  if (burger && menu) {
-    burger.addEventListener('click', function () {
-      var open = menu.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', String(open));
-    });
-  }
+  var AUTH = 'pm-auth', ADS = 'pm-ads';
+  function authed() { return store.get(AUTH) === '1'; }
+  function logout() { store.del(AUTH); location.reload(); }
 
   /* --- вкладки --- */
   function initTabs(root) {
@@ -45,15 +39,6 @@
   }
   $$('[data-tabs]').forEach(initTabs);
 
-  /* --- кнопки, которые переключают вкладку --- */
-  $$('[data-tab-go]').forEach(function (b) {
-    b.addEventListener('click', function (e) {
-      e.preventDefault();
-      var t = document.querySelector('[role=tab][data-hash="' + b.dataset.tabGo + '"]');
-      if (t) { t.click(); var p = document.getElementById(t.getAttribute('aria-controls')); if (p) p.scrollIntoView({ block: 'start' }); }
-    });
-  });
-
   /* --- «Ещё параметры» --- */
   $$('[data-toggle]').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -64,21 +49,25 @@
     });
   });
 
-  /* --- окна (главная: «Сдать или снять», объявление: жалоба) --- */
+  /* --- окна: «Что вы хотите сделать?», «Что вы ищете?», «Что вы сдаёте?», жалоба --- */
   var lastFocus = null;
   function openDlg(d) {
     if (!d) return;
-    lastFocus = document.activeElement;
+    if (!lastFocus) lastFocus = document.activeElement;
     d.hidden = false;
     document.body.classList.add('no-scroll');
     var c = $('.modal__close', d); if (c) c.focus();
   }
-  function closeDlg(d) {
+  function closeDlg(d, keepFocus) {
     if (!d || d.hidden) return;
     d.hidden = true;
-    document.body.classList.remove('no-scroll');
     if (d.id === 'choose') store.set('pm-choose', String(Date.now()));
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    var anyOpen = $$('.modal').some(function (m) { return !m.hidden; });
+    if (!anyOpen) {
+      document.body.classList.remove('no-scroll');
+      if (!keepFocus && lastFocus && lastFocus.focus) lastFocus.focus();
+      lastFocus = null;
+    }
   }
   $$('.modal').forEach(function (d) {
     d.addEventListener('mousedown', function (e) { if (e.target === d) closeDlg(d); });
@@ -87,7 +76,12 @@
     });
   });
   $$('[data-open]').forEach(function (b) {
-    b.addEventListener('click', function (e) { e.preventDefault(); openDlg(document.getElementById(b.dataset.open)); });
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      var parent = b.closest('.modal');
+      if (parent) closeDlg(parent, true);
+      openDlg(document.getElementById(b.dataset.open));
+    });
   });
   document.addEventListener('keydown', function (e) {
     var d = $$('.modal').filter(function (m) { return !m.hidden; })[0];
@@ -104,7 +98,7 @@
   /* Окно на главной показываем один раз, через несколько секунд. Чтобы отключить автопоказ, уберите этот блок. */
   var choose = $('#choose');
   if (choose && !store.get('pm-choose')) {
-    setTimeout(function () { if (choose.hidden) openDlg(choose); }, 9000);
+    setTimeout(function () { if (!$$('.modal').some(function (m) { return !m.hidden; })) openDlg(choose); }, 9000);
   }
 
   /* --- cookie: тонкая полоса внизу, запоминаем выбор --- */
@@ -144,8 +138,7 @@
     var empty = $('[data-empty]', cat);
     var moreBtn = $('[data-more-btn]', cat);
     var sortSel = $('[data-sort]', cat);
-    var chips = $$('.typechips button', cat);
-    var chip = 'all', moreOpen = false;
+    var moreOpen = false;
 
     function read() {
       var f = {};
@@ -166,7 +159,7 @@
       return f;
     }
     function active(f) {
-      return !!(f.city || f.who || f.amin !== null || f.amax !== null || f.pmin !== null || f.pmax !== null || (f.extra && f.extra.length) || chip !== 'all');
+      return !!(f.city || f.who || f.amin !== null || f.amax !== null || f.pmin !== null || f.pmax !== null || (f.extra && f.extra.length));
     }
     function match(c, f) {
       var d = c.dataset, area = +d.area, price = +d.price, feat = d.feat || '';
@@ -187,13 +180,10 @@
       }
       return true;
     }
-    function chipOk(c) {
-      return chip === 'all' || c.dataset.type === chip || (chip === 'sklad' && c.dataset.type === 'prod');
-    }
     function apply() {
       var f = read(), filtering = active(f), n = 0, hasMore = false;
       cards.forEach(function (c) {
-        var ok = match(c, f) && chipOk(c);
+        var ok = match(c, f);
         var isMore = c.dataset.more === '1';
         if (isMore && ok && !moreOpen && !filtering) hasMore = true;
         var vis = ok && (!isMore || moreOpen || filtering);
@@ -220,19 +210,9 @@
       $$('select,input[type=checkbox]', form).forEach(function (el) { el.addEventListener('change', apply); });
     }
     if (sortSel) sortSel.addEventListener('change', function () { sort(); apply(); });
-    chips.forEach(function (c) {
-      c.addEventListener('click', function () {
-        chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
-        chip = c.dataset.filter; apply();
-      });
-    });
     if (moreBtn) moreBtn.addEventListener('click', function () { moreOpen = true; apply(); });
     var rs = $('[data-reset]', cat);
-    if (rs) rs.addEventListener('click', function () {
-      if (form) form.reset();
-      chip = 'all'; chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.filter === 'all')); });
-      apply();
-    });
+    if (rs) rs.addEventListener('click', function () { if (form) form.reset(); apply(); });
     apply();
   });
 
@@ -255,18 +235,66 @@
   var pb = $('[data-phone-btn]');
   if (pb) {
     pb.addEventListener('click', function () {
-      if (store.get(AUTH) === '1') {
+      var msg = $('[data-phone-msg]');
+      if (authed()) {
         var a = document.createElement('a');
         a.className = pb.className; a.href = 'tel:+79001234567'; a.textContent = '+7 (900) 123-45-67';
         pb.parentNode.replaceChild(a, pb);
-        var msg = $('[data-phone-msg]'); if (msg) { msg.hidden = false; msg.className = 'msg msg--ok'; msg.textContent = 'Телефон из макета. Скажите, что нашли объявление на сайте.'; }
-      } else {
-        var m = $('[data-phone-msg]'); if (m) m.hidden = false;
-      }
+        if (msg) { msg.hidden = false; msg.className = 'msg msg--ok'; msg.textContent = 'Телефон из макета. Скажите, что нашли объявление на сайте.'; }
+      } else if (msg) { msg.hidden = false; }
     });
   }
 
+  /* --- страницы «Сдать»: отправка объявления и предложения арендаторам --- */
+  function toAuth() {
+    var t = document.querySelector('[role=tab][data-hash="vhod"]'); if (t) t.click();
+    var a = document.getElementById('vhod'); if (a) a.scrollIntoView({ block: 'start' });
+  }
+  var nf = $('#newad-form');
+  if (nf) {
+    nf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var need = $('[data-need-auth]', nf), done = $('[data-newad-done]', nf);
+      if (!authed()) { need.hidden = false; done.hidden = true; return; }
+      need.hidden = true;
+      var ads = []; try { ads = JSON.parse(store.get(ADS) || '[]'); } catch (x) { ads = []; }
+      var area = nf.elements.area.value.trim(), city = nf.elements.city.value.trim(), price = nf.elements.price.value.trim();
+      ads.unshift({ title: nf.dataset.name + (area ? ', ' + area + ' м²' : ''), city: city || 'Город не указан', price: price, img: nf.dataset.img });
+      store.set(ADS, JSON.stringify(ads.slice(0, 10)));
+      done.hidden = false;
+      nf.reset();
+      done.scrollIntoView({ block: 'center' });
+    });
+  }
+  $$('[data-offer]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (!authed()) { toAuth(); return; }
+      var msg = $('[data-offer-msg]', b.closest('.req')); if (msg) msg.hidden = false;
+      b.hidden = true;
+    });
+  });
+  var files = $('[data-files]');
+  if (files) files.addEventListener('change', function () {
+    var t = $('[data-files-text]');
+    if (t) t.textContent = files.files.length ? 'Выбрано файлов: ' + files.files.length : 'Перетащите фото или выберите файлы';
+  });
+
   /* --- кабинет --- */
+  var gate = $('[data-gate]');
+  if (gate && !authed()) gate.hidden = false;
+  var mine = $('#mine-list');
+  if (mine) {
+    var ads = []; try { ads = JSON.parse(store.get(ADS) || '[]'); } catch (x) { ads = []; }
+    ads.slice().reverse().forEach(function (ad) {
+      var li = document.createElement('li');
+      li.innerHTML = '<img src="assets/img/' + ad.img + '.jpg" alt="" width="112" height="84">' +
+        '<div><span class="status status--wait">На проверке</span><h3></h3><p></p><p>Мы проверяем объявление. Статус изменится, когда проверка закончится.</p></div>' +
+        '<div class="mine__act"></div>';
+      $('h3', li).textContent = ad.title;
+      $('p', li).textContent = ad.city + (ad.price ? '. ' + ad.price + ' ₽ в месяц' : '');
+      mine.insertBefore(li, mine.firstChild);
+    });
+  }
   $$('[data-unpublish]').forEach(function (b) {
     b.addEventListener('click', function () {
       var li = b.closest('li'), st = $('[data-status]', li);
@@ -276,39 +304,13 @@
       if (st) { st.textContent = off ? 'Снято с публикации' : 'Опубликовано'; st.className = 'status ' + (off ? 'status--off' : 'status--ok'); }
     });
   });
-  var files = $('[data-files]');
-  if (files) files.addEventListener('change', function () {
-    var t = $('[data-files-text]');
-    if (t) t.textContent = files.files.length ? 'Выбрано файлов: ' + files.files.length : 'Перетащите фото или выберите файлы';
-  });
-  var nf = $('#newad-form');
-  if (nf) {
-    nf.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var tp = $('input[name=ptype]:checked', nf);
-      var area = nf.elements.area.value.trim(), city = nf.elements.city.value.trim(), price = nf.elements.price.value.trim();
-      var title = (tp ? tp.dataset.name : 'Помещение') + (area ? ', ' + area + ' м²' : '');
-      var li = document.createElement('li');
-      li.innerHTML = '<img src="assets/img/' + (tp ? tp.dataset.img : 'sk-1') + '.jpg" alt="" width="112" height="84">' +
-        '<div><span class="status status--wait">На проверке</span><h3></h3><p></p><p>Мы проверяем объявление. Статус изменится, когда проверка закончится.</p></div>' +
-        '<div class="mine__act"><button class="btn btn--ghost btn--xs" type="button" data-tab-go="novoe">Изменить</button></div>';
-      $('h3', li).textContent = title;
-      $('p', li).textContent = (city || 'Город не указан') + (price ? '. ' + price + ' ₽ в месяц' : '');
-      $('[data-tab-go]', li).addEventListener('click', function (ev) {
-        ev.preventDefault(); var t = document.querySelector('[role=tab][data-hash="novoe"]'); if (t) t.click();
-      });
-      $('#mine-list').insertBefore(li, $('#mine-list').firstChild);
-      nf.reset();
-      var t = document.querySelector('[role=tab][data-hash="moi"]'); if (t) t.click();
-      li.scrollIntoView({ block: 'center' });
-    });
-  }
   var delOpen = $('[data-delete-open]');
   if (delOpen) {
     delOpen.addEventListener('click', function () { $('#delete-box').hidden = false; });
     $('[data-delete-no]').addEventListener('click', function () { $('#delete-box').hidden = true; });
     $('[data-delete-yes]').addEventListener('click', function () { $('#delete-box').hidden = true; $('#delete-done').hidden = false; });
   }
+  $$('[data-logout]').forEach(function (b) { b.addEventListener('click', logout); });
 
   /* --- вход и регистрация: номер, код из звонка, готово --- */
   $$('[data-flow]').forEach(function (pane) {
@@ -317,6 +319,14 @@
     var inputs = $$('.code input', pane), codeBox = $('.code', pane), err = $('.js-err', pane);
     var resend = $('.js-resend', pane), bars = $$('.stepper__bars i', pane), stepTxt = $('.js-step-txt', pane);
     var timerId = null;
+
+    function showDone() {
+      form1.hidden = true; form2.hidden = true; done.hidden = false;
+      if (bars[1]) bars[1].classList.add('on');
+      if (stepTxt) stepTxt.textContent = 'Номер подтверждён';
+    }
+    $('.js-logout', pane).addEventListener('click', logout);
+    if (authed()) { showDone(); return; }
 
     function valid() {
       var d = phone.value.replace(/\D/g, '');
@@ -368,9 +378,8 @@
       /* Прототип: код 0000 показывает ошибку, любой другой подходит. */
       if (code === '0000') { codeBox.classList.add('is-bad'); err.hidden = false; return; }
       clearInterval(timerId);
-      form2.hidden = true; done.hidden = false;
-      if (stepTxt) stepTxt.textContent = 'Номер подтверждён';
       store.set(AUTH, '1');
+      showDone();
     }
     inputs.forEach(function (inp, i) {
       inp.addEventListener('input', function () {

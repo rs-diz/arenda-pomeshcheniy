@@ -12,24 +12,21 @@
 </head>
 <body class="t-office" id="top">
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<!-- WP: header.php + меню «Главное» -->
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
 <header class="site-header">
   <div class="wrap site-header__in">
     <a class="logo" href="index.html" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
-    <div class="menu" id="menu">
-      <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a is-active" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
-      <div class="act">
-        <a class="link-login" href="sdat.html#vhod">Войти</a>
-        <a class="btn btn--ghost btn--sm" href="sdat.html">Сдать</a>
-        <a class="btn btn--sm" href="snyat.html">Снять</a>
-      </div>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a is-active" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html" data-open="pick-snyat">Снять</a>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i><span class="sr">Меню</span></button>
   </div>
 </header>
 <main id="main">
 <div class="wrap">
-  <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><a href="ofisy.html">Офисы</a></li><li><span aria-current="page">Офис с&nbsp;видом на&nbsp;деревья, 140&nbsp;м²</span></li></ol></nav>
+  <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="snyat-office.html">Снять</a></li><li><span aria-current="page">Офис с&nbsp;видом на&nbsp;деревья, 140&nbsp;м²</span></li></ol></nav>
   <!-- WP: single-listing.php (страница одного объявления) -->
   <article class="ad">
     <div class="ad__gal">
@@ -43,7 +40,7 @@
         <p>Основные особенности: современный ремонт, переговорная, парковка.</p>
         <h2 class="h3" style="margin-top:32px">Что&nbsp;проверить до&nbsp;показа</h2>
         <ul class="checklist"><li><b>Площадь и&nbsp;планировка</b></li><li><b>Здание и&nbsp;класс</b></li><li><b>Интернет и&nbsp;связь</b></li><li><b>Парковка</b></li><li><b>Электричество и&nbsp;климат</b></li></ul>
-        <p><a href="ofisy.html#params">Все&nbsp;пункты проверки</a></p>
+        <p><a href="snyat-office.html#params">Все&nbsp;пункты проверки</a></p>
       </div>
     </div>
     <aside class="ad__side" aria-label="Цена и контакты">
@@ -59,7 +56,7 @@
       <ul class="feat"><li>Современный ремонт</li><li>Переговорная</li><li>Парковка</li></ul>
       <div class="ad__contact">
         <button class="btn btn--accent" type="button" data-phone-btn>Показать телефон</button>
-        <p class="msg" data-phone-msg hidden>Телефон видят только вошедшие пользователи. <a href="sdat.html#vhod">Войти по&nbsp;номеру</a></p>
+        <p class="msg" data-phone-msg hidden>Телефон видят только вошедшие пользователи. <a href="vhod.html#vhod">Войти по&nbsp;номеру</a></p>
         <button class="linklike" type="button" data-open="report">Пожаловаться на&nbsp;объявление</button>
       </div>
     </aside>
@@ -123,9 +120,9 @@
     </div>
     <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
     <div><h2>Сервис</h2><ul>
-      <li><a href="snyat.html">Снять помещение</a></li>
-      <li><a href="sdat.html">Сдать помещение</a></li>
-      <li><a href="sdat.html#vhod">Личный кабинет</a></li>
+      <li><a href="index.html" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
       <li><a href="pravila.html">Правила размещения</a></li>
       <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
       <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
@@ -140,6 +137,20 @@
   <div class="wrap foot__bottom"><span>© 2026 Рабочее название проекта. Владелец сайта: [ФИО или&nbsp;название, ИНН]</span><span>Фото: Pexels</span></div>
 </footer>
 
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
 <div class="modal" id="report" role="dialog" aria-modal="true" aria-labelledby="report-t" hidden>
   <div class="modal__box">
     <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>

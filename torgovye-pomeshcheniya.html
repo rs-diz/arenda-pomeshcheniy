@@ -4,215 +4,43 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Аренда торговых помещений | Помещения</title>
-<meta name="description" content="Магазины, павильоны и площади в торговых центрах. Первая линия, витрины, поток людей: сравнивайте то, что влияет на выручку.">
+<title>Торговые помещения: сдать или&nbsp;снять | Помещения</title>
+<meta name="description" content="Торговые помещения. Выберите, что вам нужно: снять помещение в каталоге или бесплатно разместить объявление.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' fill='%23F2B91F'/%3E%3Crect x='17' y='3' width='12' height='12' fill='%23C4492B'/%3E%3Crect x='3' y='17' width='12' height='12' fill='%233D7B5B'/%3E%3Crect x='17' y='17' width='12' height='12' fill='%232B7BA3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Sofia+Sans+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="t-torg" id="top">
 <a class="skip" href="#main">К&nbsp;содержимому</a>
-<!-- WP: header.php + меню «Главное» -->
+<!-- WP: header.php + меню «Главное» (всегда открытое, без бургера) -->
 <header class="site-header">
   <div class="wrap site-header__in">
     <a class="logo" href="index.html" aria-label="На главную"><span class="logo__mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="logo__txt">Помещения</span></a>
-    <div class="menu" id="menu">
-      <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a is-active" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
-      <div class="act">
-        <a class="link-login" href="sdat.html#vhod">Войти</a>
-        <a class="btn btn--ghost btn--sm" href="sdat.html">Сдать</a>
-        <a class="btn btn--sm" href="snyat.html">Снять</a>
-      </div>
+    <nav class="nav" aria-label="Типы помещений"><a class="nav__a" style="--c:var(--sklad)" href="sklady-proizvodstva.html"><i class="sq"></i>Склады и&nbsp;производства</a><a class="nav__a is-active" style="--c:var(--torg)" href="torgovye-pomeshcheniya.html"><i class="sq"></i>Торговые помещения</a><a class="nav__a" style="--c:var(--office)" href="ofisy.html"><i class="sq"></i>Офисы</a><a class="nav__a" style="--c:var(--garage)" href="garazhi-konteynery.html"><i class="sq"></i>Гаражи и&nbsp;контейнеры</a></nav>
+    <div class="act">
+      <a class="link-login" href="vhod.html">Войти</a>
+      <a class="btn btn--ghost btn--sm" href="index.html" data-open="pick-sdat">Сдать</a>
+      <a class="btn btn--sm" href="index.html" data-open="pick-snyat">Снять</a>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><i></i><span class="sr">Меню</span></button>
   </div>
 </header>
 <main id="main">
 <div class="wrap">
   <nav class="crumbs" aria-label="Путь по сайту"><ol><li><a href="index.html">Главная</a></li><li><span aria-current="page">Торговые помещения</span></li></ol></nav>
-  <!-- WP: шаблон архива категории (taxonomy-listing_category), блок «Первый экран» -->
-  <section class="hero">
-    <div class="hero__txt">
-      <h1 class="h1 h1--page">Аренда торговых помещений</h1>
-      <p class="lead">Магазины, павильоны и&nbsp;площади в&nbsp;торговых центрах. Первая линия, витрины, поток людей: сравнивайте то, что&nbsp;влияет на&nbsp;выручку.</p>
-      <div class="btns">
-        <a class="btn btn--accent" href="#offers">Смотреть предложения</a>
-        <a class="btn btn--ghost" href="sdat.html">Сдать помещение</a>
+  <!-- WP: страница-выбор для категории: две кнопки ведут на архив категории и на «Добавить объявление» -->
+  <section class="hub">
+    <div class="hub__txt">
+      <h1 class="h1 h1--page">Хотите сдать торговое помещение или&nbsp;снять?</h1>
+      <p class="lead">Торговые помещения. Поиск и&nbsp;размещение объявлений бесплатны.</p>
+      <div class="hub__opts">
+        <a class="choice choice--dark on-dark" href="snyat-torg.html"><span class="choice__t">Снять торговое помещение</span><span class="choice__d">Каталог магазинов, павильонов и&nbsp;площадей в&nbsp;торговых центрах. Первая линия, витрины, поток людей.</span><span class="btn btn--light">Смотреть предложения</span></a>
+        <a class="choice choice--accent" href="sdat-torg.html"><span class="choice__t">Сдать торговое помещение</span><span class="choice__d">Бесплатное объявление: подтвердите номер, заполните параметры помещения и&nbsp;добавьте фото.</span><span class="btn">Разместить объявление</span></a>
       </div>
-      <p class="hero__note">Поиск и&nbsp;размещение бесплатны.</p>
     </div>
     <div class="hero__img"><img src="assets/img/hero-torg.jpg" alt="Вечерняя торговая улица с освещёнными витринами и людьми" width="1600" height="1067"></div>
   </section>
+  <nav class="typechips hub__other" aria-label="Другой тип помещения"><span>Другой тип&nbsp;помещения:</span><a href="sklady-proizvodstva.html" style="--c:var(--sklad)"><i></i>Склады и&nbsp;производства</a><a href="ofisy.html" style="--c:var(--office)"><i></i>Офисы</a><a href="garazhi-konteynery.html" style="--c:var(--garage)"><i></i>Гаражи и&nbsp;контейнеры</a></nav>
 </div>
-
-<!-- WP: блок «Плашки параметров» (группа блоков или повторитель ACF) -->
-<section class="sec" id="params" style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec__head">
-      <h2 class="h2">Что&nbsp;проверить до&nbsp;выезда на&nbsp;показ</h2>
-      <p class="lead">Площадь в&nbsp;объявлении ещё&nbsp;не&nbsp;значит, что&nbsp;помещение подойдёт. Сверьте параметры заранее и&nbsp;выезжайте только на&nbsp;подходящие.</p>
-    </div>
-    <ul class="params">
-<li class="param"><span class="param__u">м²</span><h3>Площадь и&nbsp;планировка</h3><p>Торговый зал, склад и&nbsp;подсобка: сколько из&nbsp;заявленной площади реально можно использовать.</p></li>
-<li class="param"><span class="param__u">чел./ч</span><h3>Проходимость</h3><p>Посмотрите на&nbsp;место в&nbsp;разное время дня. Поток людей важнее цифры в&nbsp;объявлении.</p></li>
-<li class="param"><span class="param__u">витрины</span><h3>Витрины и&nbsp;вход</h3><p>Видимость с&nbsp;улицы, отдельный вход, возможность разместить вывеску на&nbsp;фасаде.</p></li>
-<li class="param"><span class="param__u">этаж</span><h3>Этаж и&nbsp;линия</h3><p>Первая линия, цоколь или&nbsp;второй этаж: для&nbsp;магазина это&nbsp;очень разные условия.</p></li>
-<li class="param"><span class="param__u">кВт</span><h3>Электричество</h3><p>Холодильники, свет и&nbsp;касса. Узнайте выделенную мощность и&nbsp;можно ли&nbsp;её&nbsp;увеличить.</p></li>
-<li class="param"><span class="param__u">вент.</span><h3>Вентиляция и&nbsp;вытяжка</h3><p>Для&nbsp;общепита и&nbsp;продуктов нужна вытяжка. Проверьте, что&nbsp;она&nbsp;есть или&nbsp;что&nbsp;её&nbsp;можно установить.</p></li>
-<li class="param"><span class="param__u">вода</span><h3>Вода и&nbsp;санузел</h3><p>Подключение к&nbsp;водопроводу и&nbsp;канализации, санузел внутри помещения или&nbsp;общий.</p></li>
-<li class="param"><span class="param__u">документы</span><h3>Назначение и&nbsp;собственник</h3><p>Кто&nbsp;сдаёт, разрешена ли&nbsp;торговля вашей категорией товаров, нет&nbsp;ли&nbsp;ограничений у&nbsp;соседей.</p></li>
-      <li class="param param--cta"><h3>Найдите помещение, где&nbsp;совпали все&nbsp;параметры</h3><a class="btn" href="#offers">Смотреть предложения</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- WP: архив объявлений с фильтрами (HivePress: форма поиска + сетка объявлений) -->
-<section class="sec sec--tight" id="offers" data-catalog>
-  <div class="wrap">
-    <div class="sec__head"><h2 class="h2">Предложения: торговые помещения</h2></div>
-    <form class="filters" action="#" data-filter-form aria-label="Фильтры">
-  <div class="filters__row">
-    <label class="field"><span>Город</span><select class="select" name="city"><option value="">Любой</option><option value="Краснодар">Краснодар</option><option value="Москва">Москва и&nbsp;область</option><option value="Екатеринбург">Екатеринбург</option><option value="Казань">Казань</option><option value="Новосибирск">Новосибирск</option><option value="Ростов-на-Дону">Ростов-на-Дону</option></select></label>
-    <div class="field"><span>Площадь, м²</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Площадь, м², от" name="area-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Площадь, м², до" name="area-max"></div></div>
-    <div class="field"><span>Цена, ₽ в&nbsp;месяц</span><div class="range"><input class="input" inputmode="numeric" placeholder="от" aria-label="Цена, ₽ в месяц, от" name="price-min"><input class="input" inputmode="numeric" placeholder="до" aria-label="Цена, ₽ в месяц, до" name="price-max"></div></div>
-    <label class="field"><span>Кто&nbsp;сдаёт</span><select class="select" name="who"><option value="">Все</option><option>Собственник</option><option>Посредник</option></select></label>
-    <button class="btn btn--accent" type="submit">Показать</button>
-  </div>
-  <div class="filters__more" id="more" hidden><label class="field"><span>Этаж</span><select class="select" data-f="kw"><option value="">Любой</option><option value="1 этаж|первая линия">Первый</option><option value="цокол">Цоколь</option><option value="[2-9] этаж">Второй и&nbsp;выше</option></select></label><label class="field"><span>Вход</span><select class="select" data-f="kw"><option value="">Любой</option><option value="отдельный вход|вход с улицы">Отдельный с&nbsp;улицы</option><option value="торгов\w+ центр">Из&nbsp;торгового центра</option></select></label><label class="field"><span>Электричество, кВт</span><input class="input" inputmode="decimal" placeholder="от" data-f="min" data-key="мощность"></label><label class="check"><input type="checkbox" data-f="kw" data-kw="витрин"><span>Витринные окна</span></label><label class="check"><input type="checkbox" data-f="kw" data-kw="вытяжк|вентиляц"><span>Вытяжка и&nbsp;вентиляция</span></label><label class="check"><input type="checkbox" data-f="kw" data-kw="первая линия"><span>Первая линия</span></label></div>
-  <div class="filters__bar">
-    <button class="linkbtn" type="button" data-toggle aria-controls="more" aria-expanded="false">Ещё&nbsp;параметры</button>
-    <button class="linklike" type="reset">Сбросить фильтры</button>
-  </div>
-</form>
-    <div class="results__head">
-      <p data-count>Найдено 6 предложений</p>
-      <label class="field"><span class="sr">Сортировка</span><select class="select" style="min-height:42px" data-sort><option value="new">Сначала новые</option><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option></select></label>
-    </div>
-    <div class="cards" data-cards>
-<article class="card" data-type="torg" data-tag="torg" data-price="255000" data-area="85" data-city="Краснодар" data-who="Собственник" data-feat="витринные окна|отдельный вход|1 этаж" data-idx="0">
-  <a class="card__img" href="obyavlenie-tg-1.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-1.jpg" alt="Оживлённая торговая улица" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">255&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-1.html">Помещение на&nbsp;первой линии, 85&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, центр<br>3&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Витринные окна</li><li>Отдельный вход</li><li>1 этаж</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-1.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="160000" data-area="40" data-city="Москва" data-who="Посредник" data-feat="высокая проходимость|вывеска|в торговом центре" data-idx="1">
-  <a class="card__img" href="obyavlenie-tg-2.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-2.jpg" alt="Проход в торговом центре с магазинами" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">160&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-2.html">Торговая площадь в&nbsp;галерее, 40&nbsp;м²</a></h3>
-    <p class="card__meta">Москва, торговый центр<br>4&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Высокая проходимость</li><li>Вывеска</li><li>В&nbsp;торговом центре</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-2.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="120000" data-area="60" data-city="Екатеринбург" data-who="Собственник" data-feat="угловое|вход с улицы|вода и канализация" data-idx="2">
-  <a class="card__img" href="obyavlenie-tg-3.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-3.jpg" alt="Людная улица с магазинами и вывесками" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">120&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-3.html">Магазин у&nbsp;остановки, 60&nbsp;м²</a></h3>
-    <p class="card__meta">Екатеринбург, жилой район<br>2&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Угловое</li><li>Вход с&nbsp;улицы</li><li>Вода и&nbsp;канализация</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-3.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="330000" data-area="110" data-city="Казань" data-who="Собственник" data-feat="витрины|подсветка фасада|мощность 30 квт" data-idx="3">
-  <a class="card__img" href="obyavlenie-tg-4.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-4.jpg" alt="Витрина магазина с красной надписью SALE" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">330&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-4.html">Помещение под&nbsp;бутик, 110&nbsp;м²</a></h3>
-    <p class="card__meta">Казань, центр<br>3&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Витрины</li><li>Подсветка фасада</li><li>Мощность 30&nbsp;кВт</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-4.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="105000" data-area="35" data-city="Новосибирск" data-who="Собственник" data-feat="вытяжка|мощность 18 квт|витринные окна" data-idx="4">
-  <a class="card__img" href="obyavlenie-tg-5.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-5.jpg" alt="Вход в магазин на городской улице" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">105&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-5.html">Помещение под&nbsp;кофейню, 35&nbsp;м²</a></h3>
-    <p class="card__meta">Новосибирск, центр<br>3&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Вытяжка</li><li>Мощность 18&nbsp;кВт</li><li>Витринные окна</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-5.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="190000" data-area="95" data-city="Ростов-на-Дону" data-who="Посредник" data-feat="первая линия|отдельный вход|парковка" data-idx="5">
-  <a class="card__img" href="obyavlenie-tg-6.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tg-6.jpg" alt="Прохожие на оживлённой улице у магазинов" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">190&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-6.html">Торговое помещение в&nbsp;жилом доме, 95&nbsp;м²</a></h3>
-    <p class="card__meta">Ростов-на-Дону, спальный район<br>2&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Первая линия</li><li>Отдельный вход</li><li>Парковка</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-6.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="300000" data-area="120" data-city="Краснодар" data-who="Собственник" data-feat="в торговом центре|витрины|мощность 25 квт" data-idx="10" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-tg-7.html" tabindex="-1" aria-hidden="true"><img src="assets/img/hero-torg.jpg" alt="Торговый центр с освещёнными витринами вечером" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">300&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-7.html">Помещение в&nbsp;торговом центре, 120&nbsp;м²</a></h3>
-    <p class="card__meta">Краснодар, торговый центр<br>2&nbsp;500&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>В&nbsp;торговом центре</li><li>Витрины</li><li>Мощность 25&nbsp;кВт</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Собственник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-7.html">Подробнее</a>
-  </div>
-</article>
-<article class="card" data-type="torg" data-tag="torg" data-price="220000" data-area="55" data-city="Москва" data-who="Посредник" data-feat="высокая проходимость|в торговом центре|вывеска" data-idx="11" data-more="1" hidden>
-  <a class="card__img" href="obyavlenie-tg-8.html" tabindex="-1" aria-hidden="true"><img src="assets/img/cover-torg.jpg" alt="Атриум торгового центра с покупателями" loading="lazy" width="900" height="675"></a>
-  <div class="card__body">
-    <p class="tag" style="--c:var(--torg)"><i></i>Торговое помещение</p>
-    <p class="card__price">220&nbsp;000&nbsp;₽<span>в&nbsp;месяц</span></p>
-    <h3 class="card__title"><a href="obyavlenie-tg-8.html">Торговая площадь в&nbsp;атриуме, 55&nbsp;м²</a></h3>
-    <p class="card__meta">Москва, торговый центр<br>4&nbsp;000&nbsp;₽ за&nbsp;м² в&nbsp;месяц</p>
-    <ul class="feat"><li>Высокая проходимость</li><li>В&nbsp;торговом центре</li><li>Вывеска</li></ul>
-  </div>
-  <div class="card__foot">
-    <span class="who" title="Номер владельца подтверждён"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Посредник</span>
-    <a class="btn btn--ghost btn--xs" href="obyavlenie-tg-8.html">Подробнее</a>
-  </div>
-</article>
-    </div>
-    <p class="empty" data-empty hidden>Ничего не&nbsp;нашли. Измените параметры или <button class="linklike" type="button" data-reset>сбросьте фильтры</button>.</p>
-    <div class="more"><button class="btn btn--ghost" type="button" data-more-btn>Показать ещё</button></div>
-  </div>
-</section>
-
-<section class="sec sec--tight">
-  <div class="wrap split">
-    <div class="split__a split__a--dark on-dark"><h2 class="h2">Ищете место для&nbsp;магазина?</h2><p>Подберите помещение по&nbsp;параметрам и&nbsp;свяжитесь с&nbsp;владельцем напрямую.</p><a class="btn btn--light" href="snyat.html">Снять помещение</a></div>
-    <div class="split__a split__a--accent"><h2 class="h2">Сдаёте торговое помещение?</h2><p>Разместите объявление бесплатно. Проверим его&nbsp;и&nbsp;опубликуем в&nbsp;каталоге.</p><a class="btn" href="sdat.html">Сдать помещение</a></div>
-  </div>
-</section>
 </main>
 <!-- WP: footer.php + меню «Подвал» -->
 <footer class="site-footer on-dark">
@@ -223,9 +51,9 @@
     </div>
     <div><h2>Помещения</h2><ul><li><a href="sklady-proizvodstva.html">Склады и&nbsp;производства</a></li><li><a href="torgovye-pomeshcheniya.html">Торговые помещения</a></li><li><a href="ofisy.html">Офисы</a></li><li><a href="garazhi-konteynery.html">Гаражи и&nbsp;контейнеры</a></li></ul></div>
     <div><h2>Сервис</h2><ul>
-      <li><a href="snyat.html">Снять помещение</a></li>
-      <li><a href="sdat.html">Сдать помещение</a></li>
-      <li><a href="sdat.html#vhod">Личный кабинет</a></li>
+      <li><a href="index.html" data-open="pick-snyat">Снять помещение</a></li>
+      <li><a href="index.html" data-open="pick-sdat">Сдать помещение</a></li>
+      <li><a href="kabinet.html">Личный кабинет</a></li>
       <li><a href="pravila.html">Правила размещения</a></li>
       <li><a href="podderzhka.html">Поддержка и&nbsp;связь</a></li>
       <li><a href="podderzhat-proekt.html">Поддержать проект</a></li>
@@ -240,6 +68,20 @@
   <div class="wrap foot__bottom"><span>© 2026 Рабочее название проекта. Владелец сайта: [ФИО или&nbsp;название, ИНН]</span><span>Фото: Pexels</span></div>
 </footer>
 
+<div class="modal" id="pick-snyat" role="dialog" aria-modal="true" aria-labelledby="pick-snyat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-snyat-t">Что&nbsp;вы&nbsp;ищете?</h2>
+    <ul class="pick"><li><a href="snyat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="snyat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="snyat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="snyat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
+<div class="modal" id="pick-sdat" role="dialog" aria-modal="true" aria-labelledby="pick-sdat-t" hidden>
+  <div class="modal__box">
+    <button class="modal__close" type="button" data-close aria-label="Закрыть окно">&times;</button>
+    <h2 class="h2" id="pick-sdat-t">Что&nbsp;вы&nbsp;сдаёте?</h2>
+    <ul class="pick"><li><a href="sdat-sklad.html" style="--c:var(--sklad)"><i></i><b>Склады и&nbsp;производства</b></a></li><li><a href="sdat-torg.html" style="--c:var(--torg)"><i></i><b>Торговые помещения</b></a></li><li><a href="sdat-office.html" style="--c:var(--office)"><i></i><b>Офисы</b></a></li><li><a href="sdat-garage.html" style="--c:var(--garage)"><i></i><b>Гаражи и&nbsp;контейнеры</b></a></li></ul>
+  </div>
+</div>
 
 <!-- WP: плагин cookie-плашки -->
 <div class="cookie" role="region" aria-label="Cookie" hidden>
