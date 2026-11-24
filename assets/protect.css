@@ -31,6 +31,19 @@ img, a {
   pointer-events: none;
   background-repeat: repeat;
 }
+/* Усиленный водяной знак: показывается, когда обнаружен
+   инструмент отладки/снимков (protect.js добавляет класс на body) */
+.pt-wm-loud {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483050;
+  pointer-events: none;
+  background-repeat: repeat;
+  display: none;
+}
+body.pt-wm-loud .pt-wm-loud {
+  display: block;
+}
 
 /* 4. «Пелена»: размытие и скрытие контента при сворачивании окна,
    открытых инструментах разработчика или попытке печати/снимка */

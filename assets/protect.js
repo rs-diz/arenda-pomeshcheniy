@@ -32,19 +32,26 @@
   }
 
   /* --- Водяной знак: SVG-плитка, ставится фоном на прозрачный слой --- */
-  function addWatermark() {
-    var label = 'ПРОТОТИП \u00B7 ПОМЕЩЕНИЯ \u00B7 ' + sid;
-    var svg =
-      "<svg xmlns='http://www.w3.org/2000/svg' width='320' height='200'>" +
-      "<g transform='rotate(-22 160 100)' fill='rgba(25,25,28,0.055)' font-family='Arial,sans-serif' font-size='13' font-weight='600'>" +
+  function wmSvg(alpha, size, prefix) {
+    var label = prefix + ' \u00B7 ' + sid;
+    return "<svg xmlns='http://www.w3.org/2000/svg' width='340' height='210'>" +
+      "<g transform='rotate(-22 170 105)' fill='rgba(25,25,28," + alpha + ")' font-family='Arial,sans-serif' font-size='" + size + "' font-weight='700'>" +
       "<text x='10' y='80'>" + label + "</text>" +
-      "<text x='170' y='170'>" + label + "</text>" +
+      "<text x='180' y='175'>" + label + "</text>" +
       "</g></svg>";
+  }
+  function addWatermark() {
     var el = document.createElement('div');
     el.className = 'pt-wm';
     el.setAttribute('aria-hidden', 'true');
-    el.style.backgroundImage = "url(\"data:image/svg+xml," + encodeURIComponent(svg) + "\")";
+    el.style.backgroundImage = "url(\"data:image/svg+xml," + encodeURIComponent(wmSvg(0.14, 15, 'ПРОТОТИП \u00B7 ПОМЕЩЕНИЯ')) + "\")";
     (document.body || document.documentElement).appendChild(el);
+    /* усиленный слой: включается при обнаружении отладки/автоматики */
+    var loud = document.createElement('div');
+    loud.className = 'pt-wm-loud';
+    loud.setAttribute('aria-hidden', 'true');
+    loud.style.backgroundImage = "url(\"data:image/svg+xml," + encodeURIComponent(wmSvg(0.32, 19, 'СНИМОК ЭКРАНА \u00B7 КОПИЯ')) + "\")";
+    (document.body || document.documentElement).appendChild(loud);
   }
 
   /* --- Всплывающее уведомление --- */
@@ -203,6 +210,31 @@
     if (devtoolsOpen()) veilOn(false);
     else if (hadFocus) veilOff();
   }, 1000);
+
+  /* --- Обнаружение подключённой отладки (CDP-автоматика снимков) ---
+     Если к странице подключён отладчик, debugger-инструкция «подвисает»
+     на заметное время. В обычном браузере без отладки проверка бесплатна.
+     При обнаружении включаем усиленный водяной знак: снимок экрана
+     получится, но будет жёстко помечен. */
+  var dbgHits = 0, dbgLoud = false;
+  setInterval(function () {
+    var t1 = performance.now();
+    try { eval('(function(){debugger;})()'); } catch (e) {}
+    var dt = performance.now() - t1;
+    if (dt > 80) {
+      if (++dbgHits >= 2 && !dbgLoud) {
+        dbgLoud = true;
+        document.body.classList.add('pt-wm-loud');
+        toast('Обнаружен инструмент снимков \u2014 активен усиленный водяной знак');
+      }
+    } else {
+      dbgHits = 0;
+      if (dbgLoud) {
+        dbgLoud = false;
+        document.body.classList.remove('pt-wm-loud');
+      }
+    }
+  }, 900);
 
   /* --- Старт --- */
   function init() {
